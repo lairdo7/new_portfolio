@@ -137,7 +137,7 @@ const projectData = {
     description:
       "Arduino-based robotic claw that detects and grips objects using ultrasonic sensing and servo actuation.",
 
-    image: "assets/clawphoto.jpeg",
+    image: "assets/Clawphoto.jpeg",
   },
 };
 
