@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laird Scabar - Portfolio</title>
+    <link rel="stylesheet" href="format1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="grain-overlay"></div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <span class="theme-text">dark</span>
+    </button>
+
+    <nav>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">about</a>
+        <a href="#projects" class="nav-link">projects</a>
+        <a href="#contact" class="nav-link">contact</a>
+      </div>
+      <div class="social-links">
+        <a
+          href="https://twitter.com/lairdscabar"
+          title="Twitter"
+          target="_blank"
+          class="social-link"
+          >𝕏</a
+        >
+        <a
+          href="https://github.com/lairdo7"
+          title="GitHub"
+          target="_blank"
+          class="social-link"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://linkedin.com/in/lairdscabar"
+          title="LinkedIn"
+          target="_blank"
+          class="social-link"
+          >in</a
+        >
+        <a href="mailto:lairdscabar@gmail.com" title="Email" class="social-link"
+          >✉</a
+        >
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="content">
+        <header class="hero">
+          <div class="hero-left">
+            <div class="location">⚲ Vancouver, BC</div>
+
+            <h1 class="hero-title">
+              <span class="typing-text" id="typing-text"></span>
+            </h1>
+
+            <div class="hero-subtitle">
+              engineering student @
+              <a href="https://www.ubc.ca" class="inline-link" target="_blank">
+                <img
+                  src="assets/ubc-logo.jpg"
+                  alt="UBC"
+                  class="inline-logo-hero"
+                />
+                UBC
+              </a>
+              <div class="inner-subtitle">
+                i love building cool stuff with cool people. <br /><br />
+                currently interested in robotics, AR/VR, computer vision, and
+                anything else that challenges me.
+              </div>
+            </div>
+
+            <a
+              href="assets/resume.pdf"
+              target="_blank"
+              download
+              class="resume-button-hero"
+              >resume</a
+            >
+
+            <a href="#about" class="scroll-indicator">
+              <span class="scroll-text">scroll to see more</span>
+              <svg
+                class="scroll-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-right">
+            <div class="profile-card">
+              <div class="profile-pics-container"></div>
+              <div class="profile-nav"></div>
+            </div>
+          </div>
+        </header>
+
+        <section id="about" class="section">
+          <h2 class="section-title">experience</h2>
+
+          <div class="experience-item">
+            <div class="exp-header">
+              <h3>Engineering Student</h3>
+              <span class="exp-date">2025 - 2030</span>
+            </div>
+            <div class="exp-company">
+              <a href="https://www.ubc.ca" target="_blank" class="company-link">
+                <img src="assets/ubc-logo.jpg" alt="UBC" class="inline-logo" />
+                University of British Columbia
+              </a>
+            </div>
+            <p class="exp-description">
+              First year student planning to enter mechanical engineering with a
+              specialization in mechatronics. Predicted graduation: April 2030.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <div class="exp-header">
+              <h3>Drive Train Member</h3>
+              <span class="exp-date">Sept 2025 - Present</span>
+            </div>
+            <div class="exp-company">
+              <a href="https://subc.ca" target="_blank" class="company-link">
+                <img
+                  src="assets/subc-logo.jpeg"
+                  alt="SUBC"
+                  class="inline-logo"
+                />
+                SUBC - UBC's Submarine Design Team
+              </a>
+            </div>
+            <p class="exp-description">
+              We design and build human-powered submarines to compete in
+              international races. I help make the thing move.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <div class="exp-header">
+              <h3>Film & Television Actor</h3>
+              <span class="exp-date">2015 - Present</span>
+            </div>
+            <div class="exp-company">
+              <a
+                href="https://www.imdb.com/name/nm9478122/?ref_=fn_t_1"
+                target="_blank"
+                class="company-link"
+              >
+                <img
+                  src="assets/netflix-logo.png"
+                  alt="Netflix"
+                  class="inline-logo"
+                />
+                <img
+                  src="assets/disney-logo.png"
+                  alt="Disney"
+                  class="inline-logo"
+                />
+                <img src="assets/cbc-logo.png" alt="CBC" class="inline-logo" />
+                IMDB
+              </a>
+            </div>
+            <p class="exp-description">
+              Professional acting career spanning productions by Netflix,
+              Disney, CBC, and more since 2015.
+            </p>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <h2 class="section-title">
+            projects (hover to see preview | click to see details)
+          </h2>
+          <div class="projects-wrapper">
+            <div class="projects-list">
+              <div
+                class="project-item"
+                data-project="submarine"
+                onclick="openProject('submarine')"
+              >
+                <h3>SUBC Submarine Drivetrain</h3>
+                <p>
+                  Designed, manufactured, and optimized the human-powered
+                  drivetrain for the competition submarine.
+                </p>
+              </div>
+
+              <div
+                class="project-item"
+                data-project="claw"
+                onclick="openProject('claw')"
+              >
+                <h3>Autonomous Robotic Claw</h3>
+                <p>
+                  Arduino-based robotic claw that detects and grips objects
+                  using ultrasonic sensing and servo actuation.
+                </p>
+              </div>
+
+              <div
+                class="project-item"
+                data-project="wedoo"
+                onclick="openProject('wedoo')"
+              >
+                <h3>Wedoo - nwHacks 26'</h3>
+                <p>
+                  Collaborative to-do and habit tracking app built in 24 hours
+                  during nwHacks (largest collegiate hackathon in Western
+                  Canada)
+                </p>
+              </div>
+
+              <div
+                class="project-item"
+                data-project="portfolio"
+                onclick="openProject('portfolio')"
+              >
+                <h3>This Website</h3>
+                <p>
+                  (You don't get to click this one. Just look through the site.)
+                </p>
+              </div>
+            </div>
+
+            <div class="project-stats-card">
+              <div class="stats-placeholder">
+                Hover over a project to preview
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="random-facts" class="section">
+          <h2 class="section-title">random facts</h2>
+
+          <div class="facts-list">
+            <div class="fact-item">
+              <div class="fact-number">01</div>
+              <div class="fact-text">
+                Played volleyball (at a national level) and hockey for 13 years
+                before pursuing engineering.
+              </div>
+            </div>
+
+            <div class="fact-item">
+              <div class="fact-number">02</div>
+              <div class="fact-text">
+                Built and scaled multiple side hustles, including a dropshipping
+                business that reached $4,000 MRR (when i was 16).
+              </div>
+            </div>
+
+            <div class="fact-item">
+              <div class="fact-number">03</div>
+              <div class="fact-text">
+                Organized the Terry Fox Run in my community for 5+ years,
+                helping raise over $50,000 for cancer research.
+              </div>
+            </div>
+
+            <div class="fact-item">
+              <div class="fact-number">05</div>
+              <div class="fact-text">
+                I love traveling and hiking — my favorite place so far has been
+                exploring the Dolomites in Italy.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="section">
+          <h2 class="section-title">skills</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3 class="skill-cat-title">Design & Manufacturing</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">CAD</span>
+                <span class="skill-tag certified">
+                  SolidWorks
+                  <span class="cert-badge">CSWA</span>
+                </span>
+                <span class="skill-tag">3D Printing</span>
+                <span class="skill-tag">CNC</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3 class="skill-cat-title">Programming</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">C / C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Html/Css</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3 class="skill-cat-title">Robotics</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">OpenCV</span>
+                <span class="skill-tag">ESP32</span>
+                <span class="skill-tag">Arduino</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <h2 class="section-title">get in touch</h2>
+          <p class="contact-text">
+            want to talk about new ideas, engineering, sports, or literally
+            anything else?
+            <a href="mailto:lairdscabar@gmail.com" class="inline-link"
+              >hit me up!</a
+            >
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <!--Project Modals -->
+    <div id="submarine-modal" class="project-modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeProject('submarine')">&times;</span>
+        <h3>SUBC Submarine Drivetrain</h3>
+        <div class="carousel">
+          <div class="carousel-track">
+            <img
+              src="assets/Drivetrain.jpg"
+              alt="Submarine"
+              class="modal-image active"
+            />
+            <video
+              src="assets/DT.mp4"
+              class="modal-image"
+              controls
+              muted
+            ></video>
+            <img src="assets/5.png" alt="Submarine" class="modal-image" />
+            <img src="assets/1.jpg" alt="Submarine" class="modal-image" />
+            <img src="assets/2.jpg" alt="Submarine" class="modal-image" />
+            <img
+              src="assets/IMG_8256.JPG"
+              alt="Submarine"
+              class="modal-image"
+            />
+            <img
+              src="assets/IMG_1831.jpg"
+              alt="Submarine"
+              class="modal-image"
+            />
+            <img src="assets/4.png" alt="Submarine" class="modal-image" />
+          </div>
+          <div class="carousel-controls">
+            <button
+              class="carousel-btn prev"
+              onclick="changeSlide('submarine', -1)"
+            >
+              ←
+            </button>
+            <span class="slide-counter"
+              ><span class="current-slide">1</span> /
+              <span class="total-slides">3</span></span
+            >
+            <button
+              class="carousel-btn next"
+              onclick="changeSlide('submarine', 1)"
+            >
+              →
+            </button>
+          </div>
+        </div>
+        <div class="modal-details">
+          <p>
+            <strong>Description:</strong> Designed and prototyped the
+            human-powered drivetrain for the 2025/26 competition submarine;
+            modelled components in SolidWorks and CNC-manufactured assemblies.
+            Performed FEA-driven optimization to reduce gearbox mass by 60%
+            while maintaining structural integrity and performance.
+          </p>
+          <p>
+            <strong>What I Learned:</strong> Mechanical design, power
+            transmission, CNC, and manufacturing techniques.
+          </p>
+          <p>
+            <strong>Technologies:</strong> Solidworks, CNC, 3D Printing, FEA
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="claw-modal" class="project-modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeProject('claw')">&times;</span>
+        <h3>Autonomous Robotic Claw</h3>
+        <div class="carousel">
+          <div class="carousel-track">
+            <img
+              src="assets/Clawphoto.jpeg"
+              alt="Submarine"
+              class="modal-image active"
+            />
+            <video
+              src="assets/clawbetter.mp4"
+              class="modal-image"
+              controls
+              muted
+            ></video>
+            <img
+              src="assets/ClawAsem.jpg"
+              alt="Submarine"
+              class="modal-image active"
+            />
+            <img
+              src="assets/codesnippet.jpg"
+              alt="Submarine"
+              class="modal-image active"
+            />
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="changeSlide('claw', -1)">
+              ←
+            </button>
+            <span class="slide-counter"
+              ><span class="current-slide">1</span> /
+              <span class="total-slides">3</span></span
+            >
+            <button class="carousel-btn next" onclick="changeSlide('claw', 1)">
+              →
+            </button>
+          </div>
+        </div>
+        <div class="modal-details">
+          <p>
+            <strong>Description:</strong> Designed and built an
+            Arduino-controlled robotic claw capable of autonomously detecting
+            and grasping objects. Integrated an ultrasonic sensor for distance
+            sensing and programmed servo actuation logic to trigger reliable
+            gripping. Produced engineering drawings and refined the mechanical
+            design to ensure smooth operation and repeatable performance.
+            Performed top in the class. I was in charge of coming up with the
+            design, constructing the claw, writing the code, and doing the
+            engineer drawings...
+          </p>
+          <p>
+            <strong>What I Learned:</strong> Solidworks sheetmetal design,
+            Ultrasonic Sensor Integration
+          </p>
+          <p>
+            <strong>Technologies:</strong> Solidworks, C++, Arduino, Ultrasonic
+            Sensor, Servo Motors
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="wedoo-modal" class="project-modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeProject('wedoo')">&times;</span>
+        <h3>Wedoo - Hackathon Project</h3>
+        <div class="carousel">
+          <div class="carousel-track">
+            <img
+              src="assets/wedo1.png"
+              alt="Website"
+              class="modal-image active"
+            />
+            <img src="assets/wedo2.png" alt="Website" class="modal-image" />
+            <img src="assets/wedo3.png" alt="Website" class="modal-image" />
+          </div>
+          <div class="carousel-controls">
+            <button
+              class="carousel-btn prev"
+              onclick="changeSlide('wedoo', -1)"
+            >
+              ←
+            </button>
+            <span class="slide-counter"
+              ><span class="current-slide">1</span> /
+              <span class="total-slides">3</span></span
+            >
+            <button class="carousel-btn next" onclick="changeSlide('wedoo', 1)">
+              →
+            </button>
+          </div>
+        </div>
+        <div class="modal-details">
+          <p>
+            <strong>Description:</strong> Wedoo is a group accountability app
+            designed to help people build habits together. Users join shared
+            spaces using group codes, track progress on tasks, and stay
+            motivated through collective visibility and feedback. Built with
+            React Native and Expo, Wedoo uses a Supabase backend for real-time
+            data and integrates gemini API for habit suggestions to help groups
+            stay consistent and engaged.
+          </p>
+          <p>
+            <strong>What I Learned:</strong> React Native, Mobile Development,
+            Figma, API integration
+          </p>
+          <p>
+            <strong>Technologies:</strong> React Native, Expo, Supabase, Figma,
+            Git
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+  <footer>
+    <div class="footer-content">
+      <span>©</span>
+      <span>2026</span>
+      <span>Laird Scabar</span>
+    </div>
+  </footer>
+</html>
