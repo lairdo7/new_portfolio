@@ -272,7 +272,6 @@ footer {
     border-top: 1px solid var(--border-color);
     padding: 40px 60px;
     text-align: center;
-    margin-top: 100px;
 }
 
 .footer-content {
@@ -958,3 +957,4 @@ footer {
 body:hover .cursor-trail {
     opacity: 0.4;
 }
+
