@@ -374,6 +374,7 @@ const profilePhotos = [
   "assets/italy.jpeg",
   "assets/whistler.jpeg",
   "assets/snowboard.jpeg",
+  "assets/littleme.jpeg"
 ];
 
 let currentProfileIndex = 0;
