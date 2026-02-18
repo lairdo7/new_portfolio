@@ -236,6 +236,17 @@
 
               <div
                 class="project-item"
+                data-project="scraper"
+                onclick="openProject('scraper')"
+              >
+                <h3>Python Intership Scraper</h3>
+                <p>
+                  Python-based scraper that collects internships from Greenhouse & Lever APIs and displays filtered results in Streamlit.
+                </p>
+              </div>
+
+              <div
+                class="project-item"
                 data-project="portfolio"
                 onclick="openProject('portfolio')"
               >
@@ -520,6 +531,48 @@
           <p>
             <strong>Technologies:</strong> React Native, Expo, Supabase, Figma,
             Git
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="scraper-modal" class="project-modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeProject('scraper')">&times;</span>
+        <h3>Python Intership Scraper</h3>
+        <div class="carousel">
+          <div class="carousel-track">
+            <img
+              src="assets/InternshipTracker.png"
+              alt="Tracker"
+              class="modal-image active"
+            />
+            <img
+              src="assets/internsnippet.png"
+              alt="Tracker"
+              class="modal-image active"
+            />
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="changeSlide('scraper', -1)">
+              ←
+            </button>
+            <span class="slide-counter"
+              ><span class="current-slide">1</span> /
+              <span class="total-slides">3</span></span
+            >
+            <button class="carousel-btn next" onclick="changeSlide('scraper', 1)">
+              →
+            </button>
+          </div>
+        </div>
+        <div class="modal-details">
+          <p>
+            <strong>Description:</strong> Developed an automated internship aggregation tool that collects software, mechanical, and mechatronics internship postings from Greenhouse and Lever job boards. The system filters roles by discipline (mechanical, mechatronics, and software), removes duplicates, and presents results in an interactive Streamlit dashboard for easy browsing and export.
+          </p>
+          <p>
+            <strong>What I Learned:</strong> API integration, Streamlit, Pandas
+          </p>
+          <p>
+            <strong>Technologies:</strong> Python, Requests (API data retrieval), Pandas, Streamlit, REST APIs (Greenhouse & Lever)
           </p>
         </div>
       </div>

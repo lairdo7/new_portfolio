@@ -117,7 +117,7 @@ const projectData = {
   submarine: {
     title: "SUBC Submarine Drivetrain",
     date: "September 2025 - January 2026",
-    technologies: ["SolidWorks", "3D Printing", "FEA", "CNC"],
+    technologies: ["SolidWorks", "3D Printing", "FEA", "CNC", "Machining"],
     description:
       "Designed, manufactured, and optimized the human-powered drivetrain for the competition submarine.",
     image: "assets/Drivetrain.jpg",
@@ -133,11 +133,20 @@ const projectData = {
   claw: {
     title: "Autonomous Robotic Claw",
     date: "January 2026",
-    technologies: ["SolidWorks (Sheetmetal)", "C++", "Arduino"],
+    technologies: ["Solidworks", "C++", "Arduino", "Ultrasonic Sensor", "Servo Motors"],
     description:
       "Arduino-based robotic claw that detects and grips objects using ultrasonic sensing and servo actuation.",
 
     image: "assets/Clawphoto.jpeg",
+  },
+  scraper: {
+    title: "Python Internship Scraper",
+    date: "December 2025",
+    technologies: ["Python", "Requests (API data retrieval)", "Pandas", "Streamlit", "REST APIs (Greenhouse & Lever)"],
+    description:
+      "Python-based scraper that collects internships from Greenhouse & Lever APIs and displays filtered results in Streamlit.",
+
+    image: "assets/InternshipTracker.png",
   },
 };
 
