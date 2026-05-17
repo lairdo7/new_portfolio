@@ -266,11 +266,11 @@ animateTrails();
 
 // Profile photo carousel
 const profilePhotos = [
+  "assets/IMG_4320.jpeg",
   "assets/Me2.jpeg",
   "assets/face.jpg",
   "assets/surfing.jpeg",
   "assets/italy.jpeg",
-  "assets/IMG_4320.jpeg",
   "assets/whistler.jpeg",
   "assets/snowboard.jpeg",
   "assets/littleme.jpeg"

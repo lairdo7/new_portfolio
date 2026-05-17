@@ -37,6 +37,31 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.circuit-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.1;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232563eb' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' opacity='0.16'%3E%3Cpath d='M22 32h42v28h28v34h42'/%3E%3Cpath d='M28 128h38V96h34V70h52'/%3E%3Cpath d='M112 24v34h32'/%3E%3Cpath d='M34 72h24v28'/%3E%3Cpath d='M126 120h26v28'/%3E%3Ccircle cx='22' cy='32' r='2.5' fill='%232563eb'/%3E%3Ccircle cx='92' cy='60' r='2.5' fill='%232563eb'/%3E%3Ccircle cx='134' cy='94' r='2.5' fill='%232563eb'/%3E%3Ccircle cx='28' cy='128' r='2.5' fill='%232563eb'/%3E%3Ccircle cx='100' cy='96' r='2.5' fill='%232563eb'/%3E%3Ccircle cx='152' cy='70' r='2.5' fill='%232563eb'/%3E%3Ccircle cx='112' cy='24' r='2.5' fill='%232563eb'/%3E%3Ccircle cx='144' cy='58' r='2.5' fill='%232563eb'/%3E%3Ccircle cx='58' cy='100' r='2.5' fill='%232563eb'/%3E%3Ccircle cx='152' cy='148' r='2.5' fill='%232563eb'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    -webkit-mask-image: linear-gradient(120deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+    mask-image: linear-gradient(120deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+}
+
+body.dark-mode .circuit-overlay {
+    opacity: 0.16;
+    background-image:
+        radial-gradient(circle at 20% 12%, rgba(74, 158, 255, 0.05), transparent 30%),
+        url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%237fbaff' stroke-width='1.15' stroke-linecap='round' stroke-linejoin='round' opacity='0.34'%3E%3Cpath d='M22 32h42v28h28v34h42'/%3E%3Cpath d='M28 128h38V96h34V70h52'/%3E%3Cpath d='M112 24v34h32'/%3E%3Cpath d='M34 72h24v28'/%3E%3Cpath d='M126 120h26v28'/%3E%3Ccircle cx='22' cy='32' r='2.5' fill='%237fbaff'/%3E%3Ccircle cx='92' cy='60' r='2.5' fill='%237fbaff'/%3E%3Ccircle cx='134' cy='94' r='2.5' fill='%237fbaff'/%3E%3Ccircle cx='28' cy='128' r='2.5' fill='%237fbaff'/%3E%3Ccircle cx='100' cy='96' r='2.5' fill='%237fbaff'/%3E%3Ccircle cx='152' cy='70' r='2.5' fill='%237fbaff'/%3E%3Ccircle cx='112' cy='24' r='2.5' fill='%237fbaff'/%3E%3Ccircle cx='144' cy='58' r='2.5' fill='%237fbaff'/%3E%3Ccircle cx='58' cy='100' r='2.5' fill='%237fbaff'/%3E%3Ccircle cx='152' cy='148' r='2.5' fill='%237fbaff'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.container,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
 /* Subtle grain texture */
 .grain-overlay {
     position: fixed;
