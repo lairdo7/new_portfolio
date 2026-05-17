@@ -186,75 +186,127 @@
         </section>
 
         <section id="projects" class="section">
-          <h2 class="section-title">
-            projects (hover to see preview | click to see details)
-          </h2>
+          <h2 class="section-title">projects</h2>
           <div class="projects-wrapper">
+            <div class="project-filters" aria-label="Filter projects by focus">
+              <button class="project-filter active" type="button" data-filter="all">
+                All
+              </button>
+              <button class="project-filter" type="button" data-filter="mechanical">
+                Mechanical
+              </button>
+              <button class="project-filter" type="button" data-filter="robotics">
+                Robotics
+              </button>
+              <button class="project-filter" type="button" data-filter="software">
+                Software
+              </button>
+              <button class="project-filter" type="button" data-filter="design">
+                Design
+              </button>
+            </div>
             <div class="projects-list">
               <div
-                class="project-item"
+                class="project-card"
                 data-project="submarine"
+                data-tags="mechanical manufacturing design"
                 onclick="openProject('submarine')"
               >
-                <h3>SUBC Submarine Drivetrain</h3>
-                <p>
-                  Designed, manufactured, and optimized the human-powered
-                  drivetrain for our competition submarine.
-                </p>
+                <div class="project-card-image">
+                  <img
+                    src="assets/Drivetrain.jpg"
+                    alt="SUBC submarine drivetrain assembly"
+                  />
+                </div>
+                <div class="project-card-content">
+                  <h3>SUBC Submarine Drivetrain</h3>
+                  <p>
+                    Designed, manufactured, and optimized the human-powered
+                    drivetrain for our competition submarine.
+                  </p>
+                  <div class="project-tags" aria-label="Project focus areas">
+                    <span>Mechanical Design</span>
+                    <span>Manufacturing</span>
+                    <span>FEA</span>
+                  </div>
+                </div>
               </div>
 
               <div
-                class="project-item"
+                class="project-card"
                 data-project="claw"
+                data-tags="robotics mechanical software"
                 onclick="openProject('claw')"
               >
-                <h3>Autonomous Robotic Claw</h3>
-                <p>
-                  Arduino-based robotic claw that detects and grips objects
-                  using ultrasonic sensing and servo actuation.
-                </p>
+                <div class="project-card-image">
+                  <img
+                    src="assets/Clawphoto.jpeg"
+                    alt="Autonomous robotic claw prototype"
+                  />
+                </div>
+                <div class="project-card-content">
+                  <h3>Autonomous Robotic Claw</h3>
+                  <p>
+                    Arduino-based robotic claw that detects and grips objects
+                    using ultrasonic sensing and servo actuation.
+                  </p>
+                  <div class="project-tags" aria-label="Project focus areas">
+                    <span>Robotics</span>
+                    <span>Arduino</span>
+                    <span>Mechatronics</span>
+                  </div>
+                </div>
               </div>
 
               <div
-                class="project-item"
+                class="project-card"
                 data-project="wedoo"
+                data-tags="software design"
                 onclick="openProject('wedoo')"
               >
-                <h3>Wedoo - nwHacks 26'</h3>
-                <p>
-                  Collaborative to-do and habit tracking app built in 24 hours
-                  during nwHacks (largest collegiate hackathon in Western
-                  Canada)
-                </p>
+                <div class="project-card-image">
+                  <img src="assets/wedo1.png" alt="Wedoo app interface" />
+                </div>
+                <div class="project-card-content">
+                  <h3>Wedoo - nwHacks 26'</h3>
+                  <p>
+                    Collaborative to-do and habit tracking app built in 24 hours
+                    during nwHacks.
+                  </p>
+                  <div class="project-tags" aria-label="Project focus areas">
+                    <span>Mobile App</span>
+                    <span>Hackathon</span>
+                    <span>Product Design</span>
+                  </div>
+                </div>
               </div>
 
               <div
-                class="project-item"
+                class="project-card"
                 data-project="scraper"
+                data-tags="software automation data"
                 onclick="openProject('scraper')"
               >
-                <h3>Python Intership Scraper</h3>
-                <p>
-                  Python-based scraper that collects internships from Greenhouse & Lever APIs and displays filtered results in Streamlit.
-                </p>
+                <div class="project-card-image">
+                  <img
+                    src="assets/InternshipTracker.png"
+                    alt="Internship tracker dashboard"
+                  />
+                </div>
+                <div class="project-card-content">
+                  <h3>Python Internship Scraper</h3>
+                  <p>
+                    Python scraper that collects internships from Greenhouse and
+                    Lever APIs, then displays filtered results in Streamlit.
+                  </p>
+                  <div class="project-tags" aria-label="Project focus areas">
+                    <span>Python</span>
+                    <span>Automation</span>
+                    <span>Data Tools</span>
+                  </div>
+                </div>
               </div>
 
-              <div
-                class="project-item"
-                data-project="portfolio"
-                onclick="openProject('portfolio')"
-              >
-                <h3>This Website</h3>
-                <p>
-                  (You don't get to click this one. Just look through the site.)
-                </p>
-              </div>
-            </div>
-
-            <div class="project-stats-card">
-              <div class="stats-placeholder">
-                Hover over a project to preview
-              </div>
             </div>
           </div>
         </section>
@@ -532,7 +584,7 @@
     <div id="scraper-modal" class="project-modal">
       <div class="modal-content">
         <span class="close" onclick="closeProject('scraper')">&times;</span>
-        <h3>Python Intership Scraper</h3>
+        <h3>Python Internship Scraper</h3>
         <div class="carousel">
           <div class="carousel-track">
             <img

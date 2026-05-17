@@ -80,142 +80,31 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Project hover functionality - shows stats card
-function setupProjectPreviews() {
-  const projectItems = document.querySelectorAll(".project-item");
-  const statsCard = document.querySelector(".project-stats-card");
+// Project filters
+function setupProjectFilters() {
+  const filterButtons = document.querySelectorAll(".project-filter");
+  const projectCards = document.querySelectorAll(".project-card");
 
-  console.log("Setting up project previews...");
-  console.log("Found project items:", projectItems.length);
-  console.log("Found stats card:", !!statsCard);
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedFilter = button.dataset.filter;
 
-  if (!statsCard) {
-    console.error(
-      'Stats card not found! Make sure you have <div class="project-stats-card"> in your HTML',
-    );
-    return;
-  }
+      filterButtons.forEach((filterButton) => {
+        filterButton.classList.toggle("active", filterButton === button);
+      });
 
-  projectItems.forEach((item) => {
-    item.addEventListener("mouseenter", function () {
-      const projectId = this.getAttribute("data-project");
-      console.log("Hovering over project:", projectId);
-      showProjectStats(projectId);
-    });
+      projectCards.forEach((card) => {
+        const tags = card.dataset.tags ? card.dataset.tags.split(" ") : [];
+        const isVisible =
+          selectedFilter === "all" || tags.includes(selectedFilter);
 
-    item.addEventListener("mouseleave", function () {
-      console.log("Left project");
-      hideProjectStats();
+        card.classList.toggle("hidden", !isVisible);
+      });
     });
   });
-
-  console.log("Project previews setup complete!");
 }
 
-// Project data
-const projectData = {
-  submarine: {
-    title: "SUBC Submarine Drivetrain",
-    date: "September 2025 - January 2026",
-    technologies: ["SolidWorks", "3D Printing", "FEA", "CNC", "Machining"],
-    description:
-      "Designed, manufactured, and optimized the human-powered drivetrain for the competition submarine.",
-    image: "assets/Drivetrain.jpg",
-  },
-  wedoo: {
-    title: "Wedoo - nwHacks 26'",
-    date: "January 2026",
-    technologies: ["React Native", "Expo", "Superbase", "Figma", "Git"],
-    description:
-      "Collaborative to-do and habit tracking app built in 24 hours during nwHacks (largest collegiate hackathon in Western Canada)",
-    image: "assets/wedo1.png",
-  },
-  claw: {
-    title: "Autonomous Robotic Claw",
-    date: "January 2026",
-    technologies: ["Solidworks", "C++", "Arduino", "Ultrasonic Sensor", "Servo Motors"],
-    description:
-      "Arduino-based robotic claw that detects and grips objects using ultrasonic sensing and servo actuation.",
-
-    image: "assets/Clawphoto.jpeg",
-  },
-  scraper: {
-    title: "Python Internship Scraper",
-    date: "December 2025",
-    technologies: ["Python", "Requests (API data retrieval)", "Pandas", "Streamlit", "REST APIs (Greenhouse & Lever)"],
-    description:
-      "Python-based scraper that collects internships from Greenhouse & Lever APIs and displays filtered results in Streamlit.",
-
-    image: "assets/InternshipTracker.png",
-  },
-};
-
-function showProjectStats(projectId) {
-  const statsCard = document.querySelector(".project-stats-card");
-  if (!statsCard) {
-    console.error("Stats card not found in showProjectStats");
-    return;
-  }
-
-  const data = projectData[projectId];
-  if (!data) {
-    console.error("No data found for project:", projectId);
-    return;
-  }
-
-  console.log("Showing stats for:", projectId, data);
-
-  // Update card content with image preview
-  statsCard.innerHTML = `
-        <div class="project-preview-image-container">
-            <img src="${data.image}" alt="${data.title}" class="project-preview-img">
-        </div>
-        <div class="project-stats-content">
-            <h3>${data.title}</h3>
-            
-            <div class="stat-item">
-                <div class="stat-label">Date</div>
-                <div class="stat-value">${data.date}</div>
-            </div>
-            
-            <div class="stat-item">
-                <div class="stat-label">Technologies</div>
-                <div class="tech-icons">
-                    ${data.technologies.map((tech) => `<span class="tech-icon">${tech}</span>`).join("")}
-                </div>
-            </div>
-            
-            <div class="stat-item">
-                <div class="stat-label">About</div>
-                <div class="stat-value">${data.description}</div>
-            </div>
-        </div>
-    `;
-
-  // Force reflow before adding visible class
-  void statsCard.offsetWidth;
-
-  // Show card
-  statsCard.classList.add("visible");
-  console.log("Stats card should now be visible");
-}
-
-function hideProjectStats() {
-  const statsCard = document.querySelector(".project-stats-card");
-  if (statsCard) {
-    statsCard.classList.remove("visible");
-  }
-}
-
-// Initialize project previews when DOM is loaded
-document.addEventListener("DOMContentLoaded", setupProjectPreviews);
-
-// Also try to run it immediately in case DOM is already loaded
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", setupProjectPreviews);
-} else {
-  setupProjectPreviews();
-}
+document.addEventListener("DOMContentLoaded", setupProjectFilters);
 
 // Project modal functions
 function openProject(projectId) {
