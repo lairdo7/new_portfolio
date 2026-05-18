@@ -870,24 +870,68 @@ footer {
 }
 
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
     .container {
-        padding: 60px 24px;
+        padding: 40px 24px 60px;
     }
 
     .hero-title {
-        font-size: 56px;
+        font-size: clamp(40px, 13vw, 56px);
+        min-height: 2.1em;
+        letter-spacing: -0.02em;
     }
 
     .hero {
-        padding: 20px 0 60px 0;
+        gap: 36px;
+        min-height: auto;
+        padding: 24px 0 72px;
+    }
+
+    .location {
+        margin-bottom: 22px;
+    }
+
+    .hero-subtitle {
+        align-items: flex-start;
+        margin-bottom: 22px;
+    }
+
+    .inner-subtitle {
+        flex-basis: 100%;
+        margin-top: 8px;
+    }
+
+    .scroll-indicator {
+        margin-top: 40px;
     }
 
     .profile-card {
         max-width: 100%;
+        border-radius: 16px;
+    }
+
+    .profile-pics-container {
+        height: clamp(320px, 110vw, 450px);
     }
 
     .profile-pic {
-        height: 450px;
+        height: 100%;
+    }
+
+    .section {
+        margin-bottom: 72px;
+    }
+
+    .section-title {
+        margin-bottom: 32px;
+    }
+
+    .experience-item {
+        margin-bottom: 38px;
+        padding-bottom: 38px;
     }
 
     .exp-header {
@@ -900,14 +944,53 @@ footer {
         flex-wrap: wrap;
     }
 
+    .project-filters {
+        gap: 8px;
+    }
+
+    .project-filter {
+        padding: 8px 12px;
+    }
+
+    .projects-list,
+    .skills-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .project-card-content {
+        padding: 20px;
+    }
+
+    .fact-item {
+        grid-template-columns: 42px 1fr;
+        gap: 16px;
+    }
+
+    .project-modal.active {
+        padding: 16px;
+    }
+
     .modal-content {
-        padding: 32px 24px;
+        max-height: calc(100dvh - 32px);
+        padding: 32px 20px 24px;
+        border-radius: 16px;
+    }
+
+    .modal-content h3 {
+        font-size: 24px;
+        padding-right: 40px;
+    }
+
+    .modal-image {
+        max-height: 55vh;
     }
 
     nav {
         flex-direction: column;
         gap: 24px;
         padding: 0 24px;
+        margin-top: 24px;
+        margin-bottom: 24px;
     }
 
     .social-links {
@@ -921,10 +1004,6 @@ footer {
     .theme-toggle {
         top: 20px;
         right: 20px;
-    }
-
-    .hero-subtitle {
-        flex-wrap: wrap;
     }
 }
 
