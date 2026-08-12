@@ -3,659 +3,498 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laird Scabar - Portfolio</title>
+    <title>Laird Scabar — Mechanical &amp; Mechatronics Engineering</title>
+    <meta
+      name="description"
+      content="Laird Scabar — mechanical and mechatronics engineering student at UBC. CSWA and CSWP certified. Submarine drivetrains, robotics, and the things I build outside of school."
+    />
     <link rel="stylesheet" href="format1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Runs before first paint: `js` enables the reveal hidden state (so
+      // content stays visible without JS), `pre-dark` avoids a theme flash.
+      document.documentElement.classList.add("js");
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("pre-dark");
+      }
+    </script>
   </head>
   <body>
-    <div class="circuit-overlay"></div>
-    <div class="grain-overlay"></div>
-
-    <button class="theme-toggle" onclick="toggleTheme()">
-      <span class="theme-text">dark</span>
-    </button>
-
-    <nav>
-      <div class="nav-links">
-        <a href="#about" class="nav-link">about</a>
-        <a href="#education" class="nav-link">education</a>
-        <a href="#projects" class="nav-link">projects</a>
-        <a href="#contact" class="nav-link">contact</a>
-      </div>
-      <div class="social-links">
-        <a
-          href="https://twitter.com/lairdscabar"
-          title="Twitter"
-          target="_blank"
-          class="social-link"
-          >𝕏</a
-        >
-        <a
-          href="https://github.com/lairdo7"
-          title="GitHub"
-          target="_blank"
-          class="social-link"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-            />
-          </svg>
+    <header class="topbar" id="topbar">
+      <div class="shell topbar-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">LS</span>
+          Laird Scabar
         </a>
-        <a
-          href="https://linkedin.com/in/lairdscabar"
-          title="LinkedIn"
-          target="_blank"
-          class="social-link"
-          >in</a
-        >
-        <a href="mailto:lairdscabar@gmail.com" title="Email" class="social-link"
-          >✉</a
-        >
+
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+
+        <nav class="topnav" id="topnav">
+          <a href="#current">Now</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4.5" />
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+          </button>
+          <a class="btn btn--sm" href="assets/LairdsResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </div>
       </div>
-    </nav>
+    </header>
 
-    <div class="container">
-      <div class="content">
-        <header class="hero">
-          <div class="hero-left">
-            <div class="location">⚲ Vancouver, BC</div>
+    <main>
+      <!-- ===================== HERO ===================== -->
+      <section class="shell hero">
+        <div class="reveal">
+          <p class="hero-location"><span class="dot"></span> Vancouver, BC</p>
 
-            <h1 class="hero-title">
-              <span class="typing-text" id="typing-text"></span>
-            </h1>
+          <h1><span id="typing-text"></span></h1>
 
-            <div class="hero-subtitle">
-              mechanical / mechatronics engineering @
-              <a href="https://www.ubc.ca" class="inline-link" target="_blank">
-                <img
-                  src="assets/ubc-logo.jpg"
-                  alt="UBC"
-                  class="inline-logo-hero"
-                />
-                UBC
-              </a>
-              <div class="inner-subtitle">
-                i love building cool stuff with cool people. <br /><br />
-                currently interested in robotics, AR/VR, computer vision, and
-                anything else that challenges me.
+          <p class="hero-intro">
+            Mechanical &amp; mechatronics engineering @
+            <a class="inline-org" href="https://www.ubc.ca" target="_blank" rel="noopener noreferrer"><img src="assets/ubc-logo.jpg" alt="" /><span>UBC</span></a>.
+            I like <strong>building cool stuff with cool people</strong>.
+          </p>
+          <p class="hero-intro">
+            Currently into robotics, AR/VR, computer vision, and anything that
+            challenges me.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#projects">See my work <span class="arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="hero-collage reveal" style="--reveal-delay: 0.12s" data-gallery="hero">
+          <div class="photo">
+            <img src="assets/IMG_4320.jpeg" alt="Laird Scabar" fetchpriority="high" />
+          </div>
+          <div class="photo">
+            <img src="assets/snowboard.jpeg" alt="Snowboarding at sunset above the clouds" loading="lazy" />
+          </div>
+          <div class="photo">
+            <img src="assets/italy.jpeg" alt="Hiking a misty alpine trail in the Dolomites" loading="lazy" />
+          </div>
+          <div class="photo">
+            <img src="assets/Me2.jpeg" alt="Vancouver skyline at night from Coal Harbour" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== FACTS BAR ===================== -->
+      <section class="shell reveal">
+        <dl class="facts-bar">
+          <div><dt>School</dt><dd>UBC</dd></div>
+          <div><dt>Program</dt><dd>Mech. Eng — Mechatronics</dd></div>
+          <div><dt>Currently</dt><dd>Intern @ VETS</dd></div>
+          <div><dt>Based in</dt><dd>Vancouver, BC</dd></div>
+        </dl>
+      </section>
+
+      <!-- ===================== CURRENTLY WORKING ON ===================== -->
+      <section class="shell section" id="current">
+        <div class="wip reveal">
+          <div class="wip-copy">
+            <span class="wip-status"><span class="pulse" aria-hidden="true"></span> Currently working on</span>
+            <h2>Oculus-controlled robotic arm</h2>
+            <p>
+              I <strong>modelled the entire arm myself in SolidWorks and 3D
+              printed every part from scratch</strong> — base, links, joints and
+              gripper, no kit involved. It runs on servos off an Arduino, and
+              I'm teleoperating it with <strong>Oculus Touch controllers</strong>:
+              move your hand, the arm follows.
+            </p>
+            <ul class="wip-points">
+              <li>Every component designed from the ground up in SolidWorks, then printed and assembled at home</li>
+              <li><strong>Prototyped all the control code myself</strong> to get it to where it is now — servo drivers, joint limits, and inverse kinematics running on the microcontroller</li>
+              <li>Mapping Oculus controller pose and trigger input to joint angles in real time</li>
+              <li>Next step: recording teleop sessions as demonstrations and <strong>training the arm</strong> to repeat tasks on its own</li>
+            </ul>
+            <div class="project-card-tags">
+              <span>In progress</span><span>SolidWorks</span><span>3D printing</span><span>Arduino</span><span>Oculus</span><span>Python</span>
+            </div>
+          </div>
+
+          <div class="wip-media">
+            <div class="carousel" data-carousel>
+              <div class="carousel-track">
+                <img src="assets/claw%20project/clawphoto1.jpeg" alt="The 3D-printed robotic arm wired to an Arduino on a breadboard" class="carousel-slide active" loading="lazy" />
+                <img src="assets/claw%20project/arm-cad.png" alt="The full robotic arm assembly modelled in SolidWorks" class="carousel-slide" loading="lazy" />
+                <video src="assets/claw%20project/clawvideo1.mp4" class="carousel-slide" controls muted playsinline preload="metadata"></video>
+                <video src="assets/claw%20project/clawvideo2.mp4" class="carousel-slide" controls muted playsinline preload="metadata"></video>
+              </div>
+              <div class="carousel-controls">
+                <button class="carousel-btn" type="button" data-carousel-dir="-1" aria-label="Previous">←</button>
+                <span class="slide-counter"><span class="current-slide">1</span> / <span class="total-slides">4</span></span>
+                <button class="carousel-btn" type="button" data-carousel-dir="1" aria-label="Next">→</button>
               </div>
             </div>
-
-            <a href="assets/LairdsResume.pdf" target="_blank" rel="noopener noreferrer" class="resume-button-hero">resume</a>
-
-            <a href="#about" class="scroll-indicator">
-              <span class="scroll-text">scroll to see more</span>
-              <svg
-                class="scroll-arrow"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </a>
           </div>
+        </div>
+      </section>
 
-          <div class="hero-right">
-            <div class="profile-card">
-              <div class="profile-pics-container"></div>
-              <div class="profile-nav"></div>
+      <!-- ===================== SKILLS ===================== -->
+      <section class="shell section" id="skills">
+        <div class="skills-layout">
+          <div class="logos-head reveal">
+            <div>
+              <span class="eyebrow">Toolkit</span>
+              <h2 class="section-title">Technical skills</h2>
+            </div>
+            <div class="logos-nav">
+              <button class="logos-arrow" type="button" data-logos-dir="-1" aria-label="Scroll skills left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7" /></svg>
+              </button>
+              <button class="logos-arrow" type="button" data-logos-dir="1" aria-label="Scroll skills right">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7" /></svg>
+              </button>
             </div>
           </div>
-          
-        </header>
 
-        <section id="about" class="section">
-          <h2 class="section-title">experience</h2>
+          <div class="logos-wrap reveal">
+            <div class="logos-carousel" id="logos-carousel">
+              <ul class="logos-track">
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #fdeef0"><img src="assets/logos/solidworks.svg" alt="" decoding="async" /></span>
+                  <span class="logo-name">SolidWorks</span>
+                  <span class="logo-meta">CAD</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #eaf1ff"><img src="assets/logos/revit.svg" alt="" decoding="async" /></span>
+                  <span class="logo-name">Revit</span>
+                  <span class="logo-meta">BIM</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #fdeaf0"><img src="assets/logos/autocad.svg" alt="" decoding="async" /></span>
+                  <span class="logo-name">AutoCAD</span>
+                  <span class="logo-meta">Drafting</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #fdeaf1"><img src="assets/logos/cadmep.png" alt="" decoding="async" /></span>
+                  <span class="logo-name">CADmep</span>
+                  <span class="logo-meta">MEP fabrication</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #eef4fd"><img src="assets/logos/python.svg" alt="" decoding="async" /></span>
+                  <span class="logo-name">Python</span>
+                  <span class="logo-meta">Scripting</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #eaf2fb"><img src="assets/logos/cplusplus.svg" alt="" decoding="async" /></span>
+                  <span class="logo-name">C / C++</span>
+                  <span class="logo-meta">Firmware</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #fdf0ea"><img src="assets/logos/matlab.png" alt="" decoding="async" /></span>
+                  <span class="logo-name">MATLAB</span>
+                  <span class="logo-meta">Analysis</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #e8f6f6"><img src="assets/logos/arduino.svg" alt="" decoding="async" /></span>
+                  <span class="logo-name">Arduino</span>
+                  <span class="logo-meta">Prototyping</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #f0ecfd"><img src="assets/logos/opencv.svg" alt="" decoding="async" /></span>
+                  <span class="logo-name">OpenCV</span>
+                  <span class="logo-meta">Vision</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #f1f0ed"><img src="assets/logos/fea.png" alt="" decoding="async" /></span>
+                  <span class="logo-name">FEA</span>
+                  <span class="logo-meta">Simulation</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #edf1fb; color: #1d4ed8">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <circle cx="16" cy="16" r="8" />
+                      <path d="M16 3v26M3 16h26" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                  <span class="logo-name">GD&amp;T</span>
+                  <span class="logo-meta">Tolerancing</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #fbf3e2; color: #8a6410">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 3h8v9h-8z" />
+                      <path d="M12 12h8l-1.5 12L16 29l-2.5-5z" />
+                      <path d="M13.5 15.5h5M13.5 19h5M14 22.5h4" />
+                    </svg>
+                  </span>
+                  <span class="logo-name">CNC Machining</span>
+                  <span class="logo-meta">Fabrication</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #e9f6ee"><img src="assets/logos/3dprint.png" alt="" decoding="async" /></span>
+                  <span class="logo-name">3D Printing</span>
+                  <span class="logo-meta">Fabrication</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #e8f7fd"><img src="assets/logos/react.svg" alt="" decoding="async" /></span>
+                  <span class="logo-name">React Native</span>
+                  <span class="logo-meta">Mobile</span>
+                </li>
+                <li class="logo-card">
+                  <span class="logo-badge" style="--badge-bg: #eeeeee"><img src="assets/logos/github.svg" alt="" decoding="async" /></span>
+                  <span class="logo-name">Git / GitHub</span>
+                  <span class="logo-meta">Version control</span>
+                </li>
+              </ul>
+            </div>
+          </div>
 
-          <div class="experience-item">
-            <div class="exp-header">
+          <div class="certs reveal">
+            <!-- CSWP leads: it's the higher credential, so it gets first read. -->
+            <div class="cert-card">
+              <span class="cert-card-mark"><img src="assets/logos/cswp.png" alt="Certified SolidWorks Professional badge" loading="lazy" /></span>
+              <span>
+                <strong>CSWP — Certified SolidWorks Professional</strong>
+                <span>Dassault Systèmes · advanced part modelling, configurations, and design changes.</span>
+              </span>
+            </div>
+            <div class="cert-card">
+              <span class="cert-card-mark"><img src="assets/cswa.png" alt="Certified SolidWorks Associate badge" loading="lazy" /></span>
+              <span>
+                <strong>CSWA — Certified SolidWorks Associate</strong>
+                <span>Dassault Systèmes · part modelling, assemblies, and drawing fundamentals.</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== EXPERIENCE ===================== -->
+      <section class="shell section" id="experience">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Experience</span>
+            <h2 class="section-title">What I've been up to</h2>
+          </div>
+        </div>
+
+        <div class="timeline reveal">
+          <article class="timeline-row is-current">
+            <div class="timeline-when">May 2026 — Present</div>
+            <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-body">
               <h3>Mechanical Engineering Intern</h3>
-              <span class="exp-date">May 2026 - Present</span>
-            </div>
-            <div class="exp-company">
-              <a
-                href="https://vetsgroup.com/"
-                target="_blank"
-                class="company-link"
-              >
-                <img src="assets/vets-logo.png" alt="VETS Group" class="inline-logo" />
-                VETS Group
+              <a class="timeline-org" href="https://vetsgroup.com/" target="_blank" rel="noopener noreferrer">
+                <img src="assets/vets-logo.png" alt="" loading="lazy" /> VETS Group
               </a>
+              <p>Supporting mechanical engineering work on industrial ventilation, HVAC, and dust collection projects.</p>
             </div>
-            <p class="exp-description">
-              Supporting mechanical engineering work on industrial ventilation,
-              HVAC, and dust collection projects.
-            </p>
-          </div>
+            <span class="timeline-tag">Internship</span>
+          </article>
 
-          <div class="experience-item">
-            <div class="exp-header">
+          <article class="timeline-row is-current">
+            <div class="timeline-when">Sept 2025 — Present</div>
+            <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-body">
               <h3>Drivetrain Engineer</h3>
-              <span class="exp-date">Sept 2025 - Present</span>
+              <a class="timeline-org" href="https://subc.ca" target="_blank" rel="noopener noreferrer">
+                <img src="assets/subc-logo.jpeg" alt="" loading="lazy" /> SUBC — UBC Submarine Design Team
+              </a>
+              <p>Designing and manufacturing the human-powered drivetrain for our competition submarine. Cut gearbox weight in half and eliminated output gear slippage.</p>
             </div>
-            <div class="exp-company">
-              <a href="https://subc.ca" target="_blank" class="company-link">
-                <img
-                  src="assets/subc-logo.jpeg"
-                  alt="SUBC"
-                  class="inline-logo"
-                />
-                SUBC - UBC's Submarine Design Team
+            <span class="timeline-tag">Design team</span>
+          </article>
+
+          <article class="timeline-row">
+            <div class="timeline-when">2015 — 2025</div>
+            <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-body">
+              <h3>Film &amp; Television Actor</h3>
+              <a class="timeline-org" href="https://www.imdb.com/name/nm9478122/" target="_blank" rel="noopener noreferrer">
+                Netflix, Disney, CBC, Amazon Prime
+              </a>
+              <p>A decade of live-action and animated productions, starting at age eight. On pause while I'm at UBC.</p>
+            </div>
+            <span class="timeline-tag">On pause</span>
+          </article>
+
+          <article class="timeline-row">
+            <div class="timeline-when">2020 — Present</div>
+            <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-body">
+              <h3>Terry Fox Run Organizer</h3>
+              <span class="timeline-org">Community volunteer lead · Surrey, BC</span>
+              <p>Coordinating volunteers, sponsors, and route planning for my community's annual run — contributing to over $50,000 raised for cancer research.</p>
+            </div>
+            <span class="timeline-tag">Volunteer</span>
+          </article>
+
+          <article class="timeline-row">
+            <div class="timeline-when">Education</div>
+            <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot"></span></div>
+            <div class="timeline-body">
+              <h3>B.A.Sc. Mechanical Engineering — Mechatronics</h3>
+              <a class="timeline-org" href="https://www.ubc.ca" target="_blank" rel="noopener noreferrer">
+                <img src="assets/ubc-logo.jpg" alt="" loading="lazy" /> University of British Columbia
               </a>
             </div>
-            <p class="exp-description">
-              We design and build human-powered submarines to compete in
-              international races. I help make the thing move.
+            <span class="timeline-tag">UBC</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <section class="shell section" id="projects">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Projects</span>
+            <h2 class="section-title">Things I've built</h2>
+            <p class="section-lede">
+              Each one has its own page with photos, drawings, and a description
+              you can switch between a quick summary and the full technical
+              write-up.
             </p>
           </div>
+        </div>
 
-          <div class="experience-item">
-            <div class="exp-header">
-              <h3>Film & Television Actor</h3>
-              <span class="exp-date">2015 - 2025 (on pause)</span>
+        <div class="project-grid reveal">
+          <a class="project-card" href="project-submarine.html">
+            <div class="project-card-media">
+              <img src="assets/Drivetrain.jpg" alt="SUBC submarine drivetrain assembly" loading="lazy" />
             </div>
-            <div class="exp-company">
-              <a
-                href="https://www.imdb.com/name/nm9478122/?ref_=fn_t_1"
-                target="_blank"
-                class="company-link"
-              >
-                <img
-                  src="assets/netflix-logo.png"
-                  alt="Netflix"
-                  class="inline-logo"
-                />
-                <img
-                  src="assets/disney-logo.png"
-                  alt="Disney"
-                  class="inline-logo"
-                />
-                <img src="assets/cbc-logo.png" alt="CBC" class="inline-logo" />
-                IMDB
-              </a>
+            <div class="project-card-body">
+              <span class="project-card-kicker">01 — Mechanical design</span>
+              <h3>SUBC Submarine Drivetrain</h3>
+              <p>Human-powered drivetrain for UBC's competition submarine — 50% lighter gearbox, zero gear slippage.</p>
+              <div class="project-card-tags"><span>SolidWorks</span><span>FEA</span><span>CNC</span></div>
+              <span class="project-card-cta">View project <span class="arrow">→</span></span>
             </div>
-            <p class="exp-description">
-              Professional acting career spanning productions by Netflix,
-              Disney, CBC, and more since 2015.
+          </a>
+
+          <a class="project-card" href="project-claw.html">
+            <div class="project-card-media">
+              <img src="assets/Clawphoto.jpeg" alt="Autonomous robotic claw prototype" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <span class="project-card-kicker">02 — Robotics</span>
+              <h3>Autonomous Robotic Claw</h3>
+              <p>An Arduino claw that senses an object's distance and grips it without input.</p>
+              <div class="project-card-tags"><span>Arduino</span><span>C++</span><span>Sheet metal</span></div>
+              <span class="project-card-cta">View project <span class="arrow">→</span></span>
+            </div>
+          </a>
+
+          <a class="project-card" href="project-wedoo.html">
+            <div class="project-card-media">
+              <img src="assets/wedo1.png" alt="Wedoo app interface" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <span class="project-card-kicker">03 — Mobile</span>
+              <h3>Wedoo — nwHacks '26</h3>
+              <p>A group accountability app built in 24 hours on 2 Red Bulls and under an hour of sleep.</p>
+              <div class="project-card-tags"><span>React Native</span><span>Supabase</span><span>Figma</span></div>
+              <span class="project-card-cta">View project <span class="arrow">→</span></span>
+            </div>
+          </a>
+
+          <a class="project-card" href="project-scraper.html">
+            <div class="project-card-media">
+              <img src="assets/InternshipTracker.png" alt="Internship tracker dashboard" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <span class="project-card-kicker">04 — Automation</span>
+              <h3>Python Internship Scraper</h3>
+              <p>Aggregates postings from the Greenhouse and Lever APIs into one filterable dashboard.</p>
+              <div class="project-card-tags"><span>Python</span><span>Pandas</span><span>Streamlit</span></div>
+              <span class="project-card-cta">View project <span class="arrow">→</span></span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section class="shell section" id="contact">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Contact</span>
+            <h2 class="section-title">Let's build something</h2>
+            <p class="section-lede">
+              Want to talk about new ideas, engineering, sports, or literally
+              anything else? I'm always up for it.
             </p>
           </div>
-        </section>
+        </div>
 
-        <section id="education" class="section">
-          <h2 class="section-title">education</h2>
+        <div class="contact-grid reveal">
+          <button class="contact-method" type="button" id="copy-email" data-email="lairdscabar@gmail.com">
+            <span class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" /><path d="m3 7 9 6 9-6" />
+              </svg>
+            </span>
+            <h3>Email</h3>
+            <p>Best for internships, co-op roles, or anything you want to build.</p>
+            <span class="contact-method-detail">lairdscabar@gmail.com</span>
+            <span class="contact-method-action" id="copy-state">Click to copy</span>
+          </button>
 
-          <div class="experience-item">
-            <div class="exp-header">
-              <h3>Mechanical/Mechatronics Engineering Student</h3>
-              <span class="exp-date"></span>
-            </div>
-            <div class="exp-company">
-              <a href="https://www.ubc.ca" target="_blank" class="company-link">
-                <img src="assets/ubc-logo.jpg" alt="UBC" class="inline-logo" />
-                University of British Columbia
-              </a>
-            </div>
-            <p class="exp-description">
-              Currently studying Mechanical Engineering with a specialization in Mechatronics :)
-            </p>
-          </div>
-        </section>
+          <a class="contact-method" href="https://linkedin.com/in/lairdscabar" target="_blank" rel="noopener noreferrer">
+            <span class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9z" /></svg>
+            </span>
+            <h3>LinkedIn</h3>
+            <p>Best for staying connected and seeing what I'm working on.</p>
+            <span class="contact-method-detail">linkedin.com/in/lairdscabar</span>
+            <span class="contact-method-action">Open profile →</span>
+          </a>
 
-        <section id="projects" class="section">
-          <h2 class="section-title">projects</h2>
-          <div class="projects-wrapper">
-            <div class="project-filters" aria-label="Filter projects by focus">
-              <button class="project-filter active" type="button" data-filter="all">
-                All
-              </button>
-              <button class="project-filter" type="button" data-filter="mechanical">
-                Mechanical
-              </button>
-              <button class="project-filter" type="button" data-filter="robotics">
-                Robotics
-              </button>
-              <button class="project-filter" type="button" data-filter="software">
-                Software
-              </button>
-              <button class="project-filter" type="button" data-filter="design">
-                Design
-              </button>
-            </div>
-            <div class="projects-list">
-              <div
-                class="project-card"
-                data-project="submarine"
-                data-tags="mechanical manufacturing design"
-                onclick="openProject('submarine')"
-              >
-                <div class="project-card-image">
-                  <img
-                    src="assets/Drivetrain.jpg"
-                    alt="SUBC submarine drivetrain assembly"
-                  />
-                </div>
-                <div class="project-card-content">
-                  <h3>SUBC Submarine Drivetrain</h3>
-                  <p>
-                    Designed, manufactured, and optimized the human-powered
-                    drivetrain for our competition submarine.
-                  </p>
-                  <div class="project-tags" aria-label="Project focus areas">
-                    <span>Mechanical Design</span>
-                    <span>Manufacturing</span>
-                    <span>FEA</span>
-                  </div>
-                </div>
-              </div>
+          <a class="contact-method" href="https://github.com/lairdo7" target="_blank" rel="noopener noreferrer">
+            <span class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.41-4.03-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.7.8.58A12 12 0 0 0 12 0z" /></svg>
+            </span>
+            <h3>GitHub</h3>
+            <p>Best for the code behind the projects above.</p>
+            <span class="contact-method-detail">github.com/lairdo7</span>
+            <span class="contact-method-action">Open profile →</span>
+          </a>
+        </div>
+      </section>
+    </main>
 
-              <div
-                class="project-card"
-                data-project="claw"
-                data-tags="robotics mechanical software"
-                onclick="openProject('claw')"
-              >
-                <div class="project-card-image">
-                  <img
-                    src="assets/Clawphoto.jpeg"
-                    alt="Autonomous robotic claw prototype"
-                  />
-                </div>
-                <div class="project-card-content">
-                  <h3>Autonomous Robotic Claw</h3>
-                  <p>
-                    Arduino-based robotic claw that detects and grips objects
-                    using ultrasonic sensing and servo actuation.
-                  </p>
-                  <div class="project-tags" aria-label="Project focus areas">
-                    <span>Robotics</span>
-                    <span>Arduino</span>
-                    <span>Mechatronics</span>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="project-card"
-                data-project="wedoo"
-                data-tags="software design"
-                onclick="openProject('wedoo')"
-              >
-                <div class="project-card-image">
-                  <img src="assets/wedo1.png" alt="Wedoo app interface" />
-                </div>
-                <div class="project-card-content">
-                  <h3>Wedoo - nwHacks 26'</h3>
-                  <p>
-                    Collaborative to-do and habit tracking app built in 24 hours
-                    during nwHacks.
-                  </p>
-                  <div class="project-tags" aria-label="Project focus areas">
-                    <span>Mobile App</span>
-                    <span>Hackathon</span>
-                    <span>Product Design</span>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="project-card"
-                data-project="scraper"
-                data-tags="software automation data"
-                onclick="openProject('scraper')"
-              >
-                <div class="project-card-image">
-                  <img
-                    src="assets/InternshipTracker.png"
-                    alt="Internship tracker dashboard"
-                  />
-                </div>
-                <div class="project-card-content">
-                  <h3>Python Internship Scraper</h3>
-                  <p>
-                    Python scraper that collects internships from Greenhouse and
-                    Lever APIs, then displays filtered results in Streamlit.
-                  </p>
-                  <div class="project-tags" aria-label="Project focus areas">
-                    <span>Python</span>
-                    <span>Automation</span>
-                    <span>Data Tools</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        <section id="random-facts" class="section">
-          <h2 class="section-title">random facts</h2>
-
-          <div class="facts-list">
-            <div class="fact-item">
-              <div class="fact-number">01</div>
-              <div class="fact-text">
-                Played volleyball (at a national level) and hockey for 13 years
-                before pursuing engineering.
-              </div>
-            </div>
-
-            <div class="fact-item">
-              <div class="fact-number">02</div>
-              <div class="fact-text">
-                Built and scaled multiple side hustles, including a dropshipping
-                business that reached $4,500 MRR (when i was 16).
-              </div>
-            </div>
-
-            <div class="fact-item">
-              <div class="fact-number">03</div>
-              <div class="fact-text">
-                Organized the Terry Fox Run in my community for 5+ years,
-                helping raise over $50,000 for cancer research.
-              </div>
-            </div>
-
-            <div class="fact-item">
-              <div class="fact-number">05</div>
-              <div class="fact-text">
-                I love traveling and hiking — my favorite place so far has been
-                exploring the Dolomites in Italy.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="skills" class="section">
-          <h2 class="section-title">skills</h2>
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h3 class="skill-cat-title">Mechanical Design</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">CAD</span>
-                <span class="skill-tag certified">
-                  SolidWorks
-                  <span class="cert-badge">CSWA</span>
-                </span>
-                <span class="skill-tag">DFM/DFA</span>
-                <span class="skill-tag">FEA</span>
-                <span class="skill-tag">Prototyping</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3 class="skill-cat-title">Analysis & Programming</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">MATLAB</span>
-                <span class="skill-tag">C / C++</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Vibe Coding ;)</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">Html/Css</span>
-                <span class="skill-tag">OpenCV</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3 class="skill-cat-title">Manufacturing</h3>
-              <div class="skill-tags">
-                <span class="skill-tag">3D-Printing</span>
-                <span class="skill-tag">CNC</span>
-                <span class="skill-tag">Machining (Mill, Lathe, Band Saw, etc.)</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" class="section">
-          <h2 class="section-title">get in touch</h2>
-          <p class="contact-text">
-            want to talk about new ideas, engineering, sports, or literally
-            anything else?
-            <a href="mailto:lairdscabar@gmail.com" class="inline-link"
-              >hit me up!</a
-            >
-          </p>
-        </section>
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <span>© 2026 Laird Scabar</span>
+        <nav class="footer-links">
+          <a href="assets/LairdsResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="https://github.com/lairdo7" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/lairdscabar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:lairdscabar@gmail.com">Email</a>
+        </nav>
       </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close">&times;</button>
+      <button class="lightbox-nav prev" type="button" data-lightbox-dir="-1" aria-label="Previous photo">←</button>
+      <img id="lightbox-img" src="" alt="" />
+      <button class="lightbox-nav next" type="button" data-lightbox-dir="1" aria-label="Next photo">→</button>
+      <p class="lightbox-caption" id="lightbox-caption"></p>
     </div>
 
-    <!--Project Modals -->
-    <div id="submarine-modal" class="project-modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeProject('submarine')">&times;</span>
-        <h3>SUBC Submarine Drivetrain</h3>
-        <div class="carousel">
-          <div class="carousel-track">
-            <img
-              src="assets/Drivetrain.jpg"
-              alt="Submarine"
-              class="modal-image active"
-            />
-            <video
-              src="assets/DT.mp4"
-              class="modal-image"
-              controls
-              muted
-            ></video>
-            <img src="assets/5.png" alt="Submarine" class="modal-image" />
-            <img src="assets/1.jpg" alt="Submarine" class="modal-image" />
-            <img src="assets/2.jpg" alt="Submarine" class="modal-image" />
-            <img
-              src="assets/IMG_8256.JPG"
-              alt="Submarine"
-              class="modal-image"
-            />
-            <img
-              src="assets/IMG_1831.jpg"
-              alt="Submarine"
-              class="modal-image"
-            />
-            <img src="assets/4.png" alt="Submarine" class="modal-image" />
-          </div>
-          <div class="carousel-controls">
-            <button
-              class="carousel-btn prev"
-              onclick="changeSlide('submarine', -1)"
-            >
-              ←
-            </button>
-            <span class="slide-counter"
-              ><span class="current-slide">1</span> /
-              <span class="total-slides">3</span></span
-            >
-            <button
-              class="carousel-btn next"
-              onclick="changeSlide('submarine', 1)"
-            >
-              →
-            </button>
-          </div>
-        </div>
-        <div class="modal-details">
-          <p>
-            <strong>Description:</strong> Designed and manufactured the human-powered drivetrain for the 25/26 competition submarine. In particular, I was in charge of concept generation, optimization, and manufacturing of the side plates and step-down collar. I modelled the components in SolidWorks, performed FEA-driven optimization, and worked with a machinist to CNC the components. This work reduced the gearbox's weight by 50% and completely eliminate output gear slippage.
-          </p>
-          <p>
-            <strong>What I Learned:</strong> Mechanical design, power
-            transmission, CNC, and manufacturing techniques.
-          </p>
-          <p>
-            <strong>Technologies:</strong> Solidworks, CNC, 3D Printing, FEA
-          </p>
-        </div>
-      </div>
-    </div>
-    <div id="claw-modal" class="project-modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeProject('claw')">&times;</span>
-        <h3>Autonomous Robotic Claw</h3>
-        <div class="carousel">
-          <div class="carousel-track">
-            <img
-              src="assets/Clawphoto.jpeg"
-              alt="Submarine"
-              class="modal-image active"
-            />
-            <video
-              src="assets/clawbetter.mp4"
-              class="modal-image"
-              controls
-              muted
-            ></video>
-            <img
-              src="assets/ClawAsem.jpg"
-              alt="Submarine"
-              class="modal-image active"
-            />
-            <img
-              src="assets/codesnippet.jpg"
-              alt="Submarine"
-              class="modal-image active"
-            />
-          </div>
-          <div class="carousel-controls">
-            <button class="carousel-btn prev" onclick="changeSlide('claw', -1)">
-              ←
-            </button>
-            <span class="slide-counter"
-              ><span class="current-slide">1</span> /
-              <span class="total-slides">3</span></span
-            >
-            <button class="carousel-btn next" onclick="changeSlide('claw', 1)">
-              →
-            </button>
-          </div>
-        </div>
-        <div class="modal-details">
-          <p>
-            <strong>Description:</strong> Designed and built an
-            Arduino-controlled robotic claw capable of autonomously detecting
-            and grasping objects. Integrated an ultrasonic sensor for distance
-            sensing and programmed servo actuation logic to trigger reliable
-            gripping. Produced engineering drawings and refined the mechanical
-            design to ensure smooth operation and repeatable performance.
-          </p>
-          <p>
-            <strong>What I Learned:</strong> Solidworks sheetmetal design,
-            Ultrasonic Sensor Integration
-          </p>
-          <p>
-            <strong>Technologies:</strong> Solidworks, C++, Arduino, Ultrasonic
-            Sensor, Servo Motors
-          </p>
-        </div>
-      </div>
-    </div>
-    <div id="wedoo-modal" class="project-modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeProject('wedoo')">&times;</span>
-        <h3>Wedoo - nwHacks 26'</h3>
-        <div class="carousel">
-          <div class="carousel-track">
-            <img
-              src="assets/wedo1.png"
-              alt="Website"
-              class="modal-image active"
-            />
-            <img src="assets/wedo2.png" alt="Website" class="modal-image" />
-            <img src="assets/wedo3.png" alt="Website" class="modal-image" />
-          </div>
-          <div class="carousel-controls">
-            <button
-              class="carousel-btn prev"
-              onclick="changeSlide('wedoo', -1)"
-            >
-              ←
-            </button>
-            <span class="slide-counter"
-              ><span class="current-slide">1</span> /
-              <span class="total-slides">3</span></span
-            >
-            <button class="carousel-btn next" onclick="changeSlide('wedoo', 1)">
-              →
-            </button>
-          </div>
-        </div>
-        <div class="modal-details">
-          <p>
-            <strong>Description:</strong> Fueled by 2 redbulls and < 1 hour of sleep, Wedoo is a group accountability app
-            designed to help people build habits together. Users join shared
-            spaces using group codes, track progress on tasks, and stay
-            motivated through collective visibility and feedback. Built with
-            React Native and Expo, Wedoo uses a Supabase backend for real-time
-            data and integrates gemini API for habit suggestions to help groups
-            stay consistent and engaged.
-          </p>
-          <p>
-            <strong>What I Learned:</strong> React Native, Mobile Development,
-            Figma, API integration
-          </p>
-          <p>
-            <strong>Technologies:</strong> React Native, Expo, Supabase, Figma,
-            Git
-          </p>
-        </div>
-      </div>
-    </div>
-    <div id="scraper-modal" class="project-modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeProject('scraper')">&times;</span>
-        <h3>Python Internship Scraper</h3>
-        <div class="carousel">
-          <div class="carousel-track">
-            <img
-              src="assets/InternshipTracker.png"
-              alt="Tracker"
-              class="modal-image active"
-            />
-            <img
-              src="assets/internsnippet.png"
-              alt="Tracker"
-              class="modal-image active"
-            />
-          <div class="carousel-controls">
-            <button class="carousel-btn prev" onclick="changeSlide('scraper', -1)">
-              ←
-            </button>
-            <span class="slide-counter"
-              ><span class="current-slide">1</span> /
-              <span class="total-slides">3</span></span
-            >
-            <button class="carousel-btn next" onclick="changeSlide('scraper', 1)">
-              →
-            </button>
-          </div>
-        </div>
-        <div class="modal-details">
-          <p>
-            <strong>Description:</strong> Developed an automated internship aggregation tool that collects software, mechanical, and mechatronics internship postings from Greenhouse and Lever job boards. The system filters roles by discipline (mechanical, mechatronics, and software), removes duplicates, and presents results in an interactive Streamlit dashboard for easy browsing and export.
-          </p>
-          <p>
-            <strong>What I Learned:</strong> API integration, Streamlit, Pandas
-          </p>
-          <p>
-            <strong>Technologies:</strong> Python, Requests (API data retrieval), Pandas, Streamlit, REST APIs (Greenhouse & Lever)
-          </p>
-        </div>
-      </div>
-    </div>
     <script src="script.js"></script>
   </body>
-  <footer>
-    <div class="footer-content">
-      <span>©</span>
-      <span>2026</span>
-      <span>Laird Scabar</span>
-    </div>
-  </footer>
 </html>
