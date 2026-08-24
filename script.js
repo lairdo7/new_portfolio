@@ -362,12 +362,11 @@
       const item = group[position];
       if (!item) return;
       const img = item.querySelector("img");
-      const cap = item.querySelector(".cap");
       image.src = img.src;
       image.alt = img.alt || "";
-      // Only an explicit .cap becomes a visible caption — alt stays for screen
-      // readers but is never shown, so caption-free photos stay caption-free.
-      if (caption) caption.textContent = cap ? cap.textContent : "";
+      // Photos are shown without captions; alt text stays for screen readers
+      // but is deliberately never rendered.
+      if (caption) caption.textContent = "";
     }
 
     function open(item) {
