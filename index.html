@@ -39,10 +39,11 @@
         </button>
 
         <nav class="topnav" id="topnav">
-          <a href="#current">Now</a>
           <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
+          <a href="#current">Now</a>
           <a href="#projects">Projects</a>
+          <a href="about.html">About me</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -75,12 +76,13 @@
             I like <strong>building cool stuff with cool people</strong>.
           </p>
           <p class="hero-intro">
-            Currently into robotics, AR/VR, computer vision, and anything that
+            Currently into robotics, physical ai, mechanical design, and anything that
             challenges me.
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#projects">See my work <span class="arrow">→</span></a>
+            <a class="btn" href="#current">See my work <span class="arrow">→</span></a>
+            <a class="btn btn--ghost" href="about.html">About me</a>
           </div>
         </div>
 
@@ -89,13 +91,13 @@
             <img src="assets/IMG_4320.jpeg" alt="Laird Scabar" fetchpriority="high" />
           </div>
           <div class="photo">
-            <img src="assets/snowboard.jpeg" alt="Snowboarding at sunset above the clouds" loading="lazy" />
+            <img src="assets/snowboarding.jpeg" alt="Snowboarding" loading="lazy" />
           </div>
           <div class="photo">
-            <img src="assets/italy.jpeg" alt="Hiking a misty alpine trail in the Dolomites" loading="lazy" />
+            <img src="assets/hiking1.jpeg" alt="Hiking in the BC mountains" loading="lazy" />
           </div>
           <div class="photo">
-            <img src="assets/Me2.jpeg" alt="Vancouver skyline at night from Coal Harbour" loading="lazy" />
+            <img src="assets/surfing1.jpeg" alt="Surfing" loading="lazy" />
           </div>
         </div>
       </section>
@@ -108,48 +110,6 @@
           <div><dt>Currently</dt><dd>Intern @ VETS</dd></div>
           <div><dt>Based in</dt><dd>Vancouver, BC</dd></div>
         </dl>
-      </section>
-
-      <!-- ===================== CURRENTLY WORKING ON ===================== -->
-      <section class="shell section" id="current">
-        <div class="wip reveal">
-          <div class="wip-copy">
-            <span class="wip-status"><span class="pulse" aria-hidden="true"></span> Currently working on</span>
-            <h2>Oculus-controlled robotic arm</h2>
-            <p>
-              I <strong>modelled the entire arm myself in SolidWorks and 3D
-              printed every part from scratch</strong> — base, links, joints and
-              gripper, no kit involved. It runs on servos off an Arduino, and
-              I'm teleoperating it with <strong>Oculus Touch controllers</strong>:
-              move your hand, the arm follows.
-            </p>
-            <ul class="wip-points">
-              <li>Every component designed from the ground up in SolidWorks, then printed and assembled at home</li>
-              <li><strong>Prototyped all the control code myself</strong> to get it to where it is now — servo drivers, joint limits, and inverse kinematics running on the microcontroller</li>
-              <li>Mapping Oculus controller pose and trigger input to joint angles in real time</li>
-              <li>Next step: recording teleop sessions as demonstrations and <strong>training the arm</strong> to repeat tasks on its own</li>
-            </ul>
-            <div class="project-card-tags">
-              <span>In progress</span><span>SolidWorks</span><span>3D printing</span><span>Arduino</span><span>Oculus</span><span>Python</span>
-            </div>
-          </div>
-
-          <div class="wip-media">
-            <div class="carousel" data-carousel>
-              <div class="carousel-track">
-                <img src="assets/claw%20project/clawphoto1.jpeg" alt="The 3D-printed robotic arm wired to an Arduino on a breadboard" class="carousel-slide active" loading="lazy" />
-                <img src="assets/claw%20project/arm-cad.png" alt="The full robotic arm assembly modelled in SolidWorks" class="carousel-slide" loading="lazy" />
-                <video src="assets/claw%20project/clawvideo1.mp4" class="carousel-slide" controls muted playsinline preload="metadata"></video>
-                <video src="assets/claw%20project/clawvideo2.mp4" class="carousel-slide" controls muted playsinline preload="metadata"></video>
-              </div>
-              <div class="carousel-controls">
-                <button class="carousel-btn" type="button" data-carousel-dir="-1" aria-label="Previous">←</button>
-                <span class="slide-counter"><span class="current-slide">1</span> / <span class="total-slides">4</span></span>
-                <button class="carousel-btn" type="button" data-carousel-dir="1" aria-label="Next">→</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- ===================== SKILLS ===================== -->
@@ -214,11 +174,6 @@
                   <span class="logo-meta">Prototyping</span>
                 </li>
                 <li class="logo-card">
-                  <span class="logo-badge" style="--badge-bg: #f0ecfd"><img src="assets/logos/opencv.svg" alt="" decoding="async" /></span>
-                  <span class="logo-name">OpenCV</span>
-                  <span class="logo-meta">Vision</span>
-                </li>
-                <li class="logo-card">
                   <span class="logo-badge" style="--badge-bg: #f1f0ed"><img src="assets/logos/fea.png" alt="" decoding="async" /></span>
                   <span class="logo-name">FEA</span>
                   <span class="logo-meta">Simulation</span>
@@ -250,11 +205,6 @@
                   <span class="logo-meta">Fabrication</span>
                 </li>
                 <li class="logo-card">
-                  <span class="logo-badge" style="--badge-bg: #e8f7fd"><img src="assets/logos/react.svg" alt="" decoding="async" /></span>
-                  <span class="logo-name">React Native</span>
-                  <span class="logo-meta">Mobile</span>
-                </li>
-                <li class="logo-card">
                   <span class="logo-badge" style="--badge-bg: #eeeeee"><img src="assets/logos/github.svg" alt="" decoding="async" /></span>
                   <span class="logo-name">Git / GitHub</span>
                   <span class="logo-meta">Version control</span>
@@ -270,6 +220,7 @@
               <span>
                 <strong>CSWP — Certified SolidWorks Professional</strong>
                 <span>Dassault Systèmes · advanced part modelling, configurations, and design changes.</span>
+                <a class="cert-link" href="https://www.linkedin.com/in/lairdscabar/overlay/Certifications/829017933/treasury/?profileId=ACoAAE05WQEBUxyU-kpWU8nk_OMg9K2FCngMYTw" target="_blank" rel="noopener noreferrer">View credential <span class="arrow">→</span></a>
               </span>
             </div>
             <div class="cert-card">
@@ -277,6 +228,7 @@
               <span>
                 <strong>CSWA — Certified SolidWorks Associate</strong>
                 <span>Dassault Systèmes · part modelling, assemblies, and drawing fundamentals.</span>
+                <a class="cert-link" href="https://www.linkedin.com/in/lairdscabar/overlay/Certifications/1838150098/treasury/?profileId=ACoAAE05WQEBUxyU-kpWU8nk_OMg9K2FCngMYTw" target="_blank" rel="noopener noreferrer">View credential <span class="arrow">→</span></a>
               </span>
             </div>
           </div>
@@ -292,9 +244,23 @@
           </div>
         </div>
 
+        <div class="edu-card reveal">
+          <a class="edu-crest" href="https://www.ubc.ca" target="_blank" rel="noopener noreferrer">
+            <img src="assets/ubc-logo.jpg" alt="University of British Columbia" loading="lazy" />
+          </a>
+          <div class="edu-body">
+            <span class="edu-label">Education</span>
+            <h3>B.A.Sc. Mechanical Engineering</h3>
+            <p class="edu-school">
+              Mechatronics specialization ·
+              <a href="https://www.ubc.ca" target="_blank" rel="noopener noreferrer">University of British Columbia</a>
+            </p>
+          </div>
+        </div>
+
         <div class="timeline reveal">
           <article class="timeline-row is-current">
-            <div class="timeline-when">May 2026 — Present</div>
+            <div class="timeline-when">May 2026 — August 2026</div>
             <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot"></span></div>
             <div class="timeline-body">
               <h3>Mechanical Engineering Intern</h3>
@@ -306,8 +272,8 @@
             <span class="timeline-tag">Internship</span>
           </article>
 
-          <article class="timeline-row is-current">
-            <div class="timeline-when">Sept 2025 — Present</div>
+          <article class="timeline-row">
+            <div class="timeline-when">Sept 2025 — May 2026</div>
             <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot"></span></div>
             <div class="timeline-body">
               <h3>Drivetrain Engineer</h3>
@@ -343,17 +309,48 @@
             <span class="timeline-tag">Volunteer</span>
           </article>
 
-          <article class="timeline-row">
-            <div class="timeline-when">Education</div>
-            <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot"></span></div>
-            <div class="timeline-body">
-              <h3>B.A.Sc. Mechanical Engineering — Mechatronics</h3>
-              <a class="timeline-org" href="https://www.ubc.ca" target="_blank" rel="noopener noreferrer">
-                <img src="assets/ubc-logo.jpg" alt="" loading="lazy" /> University of British Columbia
-              </a>
+        </div>
+      </section>
+
+      <!-- ===================== CURRENTLY WORKING ON ===================== -->
+      <section class="shell section" id="current">
+        <div class="wip reveal">
+          <div class="wip-copy">
+            <span class="wip-status"><span class="pulse" aria-hidden="true"></span> Currently working on</span>
+            <h2>Oculus-controlled robotic arm</h2>
+            <p>
+              I <strong>modelled the entire arm myself in SolidWorks and 3D
+              printed every part from scratch</strong> — base, links, joints and
+              gripper, no kit involved. It runs on servos off an Arduino, and
+              I'm teleoperating it with <strong>Oculus Touch controllers</strong>:
+              move your hand, the arm follows.
+            </p>
+            <ul class="wip-points">
+              <li>Every component designed from the ground up in SolidWorks, then printed and assembled at home</li>
+              <li><strong>Prototyped all the control code myself</strong> to get it to where it is now — servo drivers, joint limits, and inverse kinematics running on the microcontroller</li>
+              <li>Mapping Oculus controller pose and trigger input to joint angles in real time</li>
+              <li>Next step: recording teleop sessions as demonstrations and <strong>training the arm</strong> to repeat tasks on its own</li>
+            </ul>
+            <div class="project-card-tags">
+              <span>In progress</span><span>SolidWorks</span><span>3D printing</span><span>Arduino</span><span>Oculus</span><span>Python</span>
             </div>
-            <span class="timeline-tag">UBC</span>
-          </article>
+          </div>
+
+          <div class="wip-media">
+            <div class="carousel" data-carousel>
+              <div class="carousel-track">
+                <img src="assets/claw%20project/clawphoto1.jpeg" alt="The 3D-printed robotic arm wired to an Arduino on a breadboard" class="carousel-slide active" loading="lazy" />
+                <img src="assets/claw%20project/arm-cad.png" alt="The full robotic arm assembly modelled in SolidWorks" class="carousel-slide" loading="lazy" />
+                <video src="assets/claw%20project/clawvideo1.mp4" class="carousel-slide" controls muted playsinline preload="metadata"></video>
+                <video src="assets/claw%20project/clawvideo2.mp4" class="carousel-slide" controls muted playsinline preload="metadata"></video>
+              </div>
+              <div class="carousel-controls">
+                <button class="carousel-btn" type="button" data-carousel-dir="-1" aria-label="Previous">←</button>
+                <span class="slide-counter"><span class="current-slide">1</span> / <span class="total-slides">4</span></span>
+                <button class="carousel-btn" type="button" data-carousel-dir="1" aria-label="Next">→</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -479,6 +476,7 @@
       <div class="shell footer-inner">
         <span>© 2026 Laird Scabar</span>
         <nav class="footer-links">
+          <a href="about.html">About me</a>
           <a href="assets/LairdsResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <a href="https://github.com/lairdo7" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://linkedin.com/in/lairdscabar" target="_blank" rel="noopener noreferrer">LinkedIn</a>

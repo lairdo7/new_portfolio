@@ -1,6 +1,9 @@
-// Interactive 3D CAD viewer for project modals.
+// Interactive 3D CAD viewer for project pages.
 // Renders any element shaped like:
 //   <div class="cad-viewer" data-model="assets/models/part.stl"></div>
+// data-model also accepts a comma-separated list of parts, which are loaded
+// into one group and framed together. SolidWorks exports each component of an
+// assembly in shared assembly coordinates, so the parts land already mated.
 // Supports .stl (SolidWorks export) and .glb/.gltf files.
 // Viewers lazy-initialize the first time they become visible and pause
 // rendering while hidden, so closed modals cost nothing.
@@ -78,10 +81,13 @@ function createViewer(el) {
 }
 
 function loadModel(url, state) {
-  const isStl = /\.stl(\?.*)?$/i.test(url);
+  const urls = url
+    .split(",")
+    .map((u) => u.trim())
+    .filter(Boolean);
   const color = state.el.dataset.cadColor || "#96a9c4";
 
-  const onError = () => {
+  const fail = () => {
     state.el.classList.remove("cad-loading");
     state.el.classList.add("cad-error");
     const msg = document.createElement("div");
@@ -101,24 +107,46 @@ function loadModel(url, state) {
     }
   };
 
-  if (isStl) {
-    new STLLoader().load(
-      url,
-      (geometry) => {
-        geometry.computeVertexNormals();
-        const material = new THREE.MeshStandardMaterial({
-          color: new THREE.Color(color),
-          metalness: 0.55,
-          roughness: 0.42,
-        });
-        onReady(new THREE.Mesh(geometry, material));
-      },
-      undefined,
-      onError
-    );
-  } else {
-    new GLTFLoader().load(url, (gltf) => onReady(gltf.scene), undefined, onError);
-  }
+  const material = new THREE.MeshStandardMaterial({
+    color: new THREE.Color(color),
+    metalness: 0.55,
+    roughness: 0.42,
+  });
+
+  const loadOne = (single) =>
+    new Promise((resolve) => {
+      if (/\.stl(\?.*)?$/i.test(single)) {
+        new STLLoader().load(
+          single,
+          (geometry) => {
+            geometry.computeVertexNormals();
+            resolve(new THREE.Mesh(geometry, material));
+          },
+          undefined,
+          () => resolve(null)
+        );
+      } else {
+        new GLTFLoader().load(
+          single,
+          (gltf) => resolve(gltf.scene),
+          undefined,
+          () => resolve(null)
+        );
+      }
+    });
+
+  // One failed part shouldn't blank the whole assembly — only give up if
+  // nothing at all loaded.
+  Promise.all(urls.map(loadOne)).then((parts) => {
+    const loaded = parts.filter(Boolean);
+    if (!loaded.length) return fail();
+
+    if (loaded.length === 1) return onReady(loaded[0]);
+
+    const group = new THREE.Group();
+    loaded.forEach((part) => group.add(part));
+    onReady(group);
+  });
 }
 
 function frameObject(object, state) {
