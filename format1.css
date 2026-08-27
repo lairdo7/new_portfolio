@@ -1737,8 +1737,9 @@ body.dark-mode .theme-toggle .moon { display: none; }
 [data-gallery="acting"] .photo img { object-position: center 30%; }
 
 /* Same idea per-photo: for shots where the subject sits high in the frame, a
-   centred crop cuts heads off. */
-.photo img.crop-top { object-position: center 22%; }
+   centred crop cuts the top off. --crop-y tunes how far up the window sits. */
+.photo img.crop-top,
+.carousel-slide.crop-top { object-position: center var(--crop-y, 22%); }
 
 .photo {
     position: relative;

@@ -242,9 +242,16 @@
 
       function show(index) {
         slides.forEach((slide) => slide.classList.remove("active"));
-        slides[index].classList.add("active");
+        const shown = slides[index];
+        shown.classList.add("active");
         if (current) current.textContent = String(index + 1);
         carousel.querySelectorAll("video").forEach((v) => v.pause());
+        // A slide marked autoplay should resume when you navigate back to it,
+        // not sit frozen because the pause above just stopped it.
+        if (shown.tagName === "VIDEO" && shown.hasAttribute("autoplay")) {
+          const p = shown.play();
+          if (p && p.catch) p.catch(() => {});
+        }
         // Let the 3D viewer know it may have become visible or hidden.
         document.dispatchEvent(new Event("cad:refresh"));
       }
