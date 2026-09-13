@@ -49,15 +49,15 @@
         <span class="eyebrow">Project 01 — Mechanical design</span>
         <h1>SUBC Submarine Drivetrain</h1>
         <p class="section-lede">
-          The human-powered drivetrain for UBC's competition submarine — redesigned
-          to be half the weight with none of the gear slippage.
+          The human-powered drivetrain for UBC's competition submarine — with 37% lighter
+          side plates and no more slippage on the driving pinion.
         </p>
 
         <dl class="proj-meta">
           <div><dt>Team</dt><dd>SUBC — UBC Submarine Design Team</dd></div>
           <div><dt>Timeline</dt><dd>2025 — 2026</dd></div>
           <div><dt>My role</dt><dd>Drivetrain Engineer</dd></div>
-          <div><dt>Outcome</dt><dd>50% lighter gearbox</dd></div>
+          <div><dt>Outcome</dt><dd>37% lighter side plates</dd></div>
         </dl>
       </section>
 
@@ -108,9 +108,9 @@
               <h2>What it is</h2>
               <ul class="simple-bullets">
                 <li>SUBC builds human-powered submarines to race internationally — a diver inside pedals the sub through a course.</li>
-                <li>I owned the drivetrain: the gearbox that turns pedalling into propeller rotation.</li>
-                <li>Redesigning the side plates and step-down collar cut the gearbox weight in half and eliminated output gear slippage entirely.</li>
-                <li>Modelled in SolidWorks, validated with FEA, and CNC machined with a machinist.</li>
+                <li>I work on the drivetrain: a 2:1 straight-bevel gearbox that turns pedalling into propeller rotation, designed for a 1.8–2.1 kN load.</li>
+                <li>FEA-guided material removal cut the side plates from 1.89 lb to 1.19 lb (37%), and a modified step-down collar stopped the driving pinion from slipping.</li>
+                <li>Modelled in SolidWorks, validated with FEA, and CNC machined in-house.</li>
               </ul>
             </div>
             <div class="simple-visual">
@@ -135,8 +135,8 @@
                     <h3><span class="step-index">1.</span> Two things were wrong with the old gearbox</h3>
                     <ul class="dd-bullets">
                       <li>It was <strong>heavier than it needed to be</strong>. The whole vehicle is buoyancy-balanced, so every gram of structure is a gram that has to be offset somewhere else.</li>
-                      <li>The <strong>output gear slipped on its shaft under load</strong> — losing power at exactly the moment the pilot was pushing hardest, which is the worst possible time to lose it.</li>
-                      <li>Both problems lived in the same two components: the side plates that carry the bearing bores, and the step-down collar that couples the output gear.</li>
+                      <li>The <strong>driving pinion slipped on its shaft and drifted out of alignment</strong> — losing power at exactly the moment the pilot was pushing hardest.</li>
+                      <li>Both problems lived in the same two components: the side plates that carry the bearing bores, and the collar that locates the driving pinion.</li>
                     </ul>
                   </div>
                 </div>
@@ -167,9 +167,9 @@
                     <p class="section-kicker">Part 3: FEA optimization</p>
                     <h3><span class="step-index">3.</span> Letting the analysis remove the material</h3>
                     <ul class="dd-bullets">
-                      <li>Ran FEA on each iteration and stripped material out of the low-stress regions the analysis highlighted.</li>
-                      <li>Held <strong>deflection at the bearing seats</strong> as the hard constraint — past a certain flex the gears stop meshing correctly no matter how strong the plate is.</li>
-                      <li>Several concepts I liked visually failed on deflection and had to be thrown out. This was the first project where FEA changed my design rather than just confirming it.</li>
+                      <li>Ran FEA on each iteration against the 1.8–2.1 kN design load and removed material from the low-stress regions the analysis highlighted.</li>
+                      <li>Held the <strong>required safety factors</strong> as the hard constraint, and got the side plates from <strong>1.89 lb down to 1.19 lb — 37% lighter</strong>.</li>
+                      <li>Several concepts I liked visually didn't hold the safety factor and had to be thrown out. This was the first project where FEA changed my design rather than just confirming it.</li>
                     </ul>
                   </div>
                   <div class="dd-media">
@@ -183,11 +183,11 @@
                 <div class="dd-content">
                   <div class="dd-copy">
                     <p class="section-kicker">Part 4: fixing the slippage</p>
-                    <h3><span class="step-index">4.</span> Redesigning the step-down collar</h3>
+                    <h3><span class="step-index">4.</span> Turning a stock collar into a step-down collar</h3>
                     <ul class="dd-bullets">
-                      <li>The original collar relied on friction alone to hold the output gear, which is why it let go under peak torque.</li>
-                      <li>Redesigned the interface to <strong>positively lock</strong> the gear instead — a mechanical constraint rather than a clamping force that degrades.</li>
-                      <li>Produced manufacturing drawings with GD&amp;T callouts so the fits were unambiguous to whoever cut the part.</li>
+                      <li>The driving pinion was slipping on its shaft and losing alignment, and nothing off the shelf fit the jump from <strong>0.500 in to 0.375 in</strong>.</li>
+                      <li>Modified a stock <strong>McMaster-Carr shaft collar</strong> into a 0.500 to 0.375 in step-down collar in SolidWorks, sized for our gearbox and for what we could machine in-house.</li>
+                      <li>Made drawings so the fits were unambiguous to whoever cut the part.</li>
                     </ul>
                   </div>
                   <div class="dd-media">
@@ -203,15 +203,14 @@
                     <p class="section-kicker">Part 5: manufacturing &amp; results</p>
                     <h3><span class="step-index">5.</span> Cutting it and proving it</h3>
                     <ul class="dd-bullets">
-                      <li>Worked directly with a machinist to CNC the components, then test-fitted and validated the assembly on the bench before integration.</li>
-                      <li><strong>50% reduction</strong> in gearbox weight versus the previous design.</li>
-                      <li><strong>Gear slippage eliminated</strong> — no measurable loss under full pilot load.</li>
-                      <li>Parts came off the CNC to spec and assembled without rework.</li>
+                      <li>Prepared drawings for CNC machining, then installed the finished side plates into the assembly.</li>
+                      <li><strong>37% lighter side plates</strong> (1.89 → 1.19 lb) while holding the required safety factors.</li>
+                      <li><strong>Pinion slippage eliminated</strong> and alignment restored with the step-down collar.</li>
                     </ul>
                     <p>
                       The biggest lesson wasn't the analysis — it was how much
-                      manufacturing constrains design. Talking to the machinist
-                      early changed my geometry more than any simulation did,
+                      manufacturing constrains design. Designing around what we
+                      could machine in-house changed my geometry more than any simulation did,
                       because a part you can't fixture is a part you can't make.
                     </p>
                   </div>
