@@ -41,7 +41,7 @@
         <nav class="topnav" id="topnav">
           <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
-          <a href="#current">Now</a>
+          <a href="#featured">Featured</a>
           <a href="#projects">Projects</a>
           <a href="about.html">About me</a>
           <a href="#contact">Contact</a>
@@ -81,7 +81,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#current">See my work <span class="arrow">→</span></a>
+            <a class="btn" href="#featured">See my work <span class="arrow">→</span></a>
             <a class="btn btn--ghost" href="about.html">About me</a>
           </div>
         </div>
@@ -312,27 +312,28 @@
         </div>
       </section>
 
-      <!-- ===================== CURRENTLY WORKING ON ===================== -->
-      <section class="shell section" id="current">
+      <!-- ===================== FEATURED PROJECT ===================== -->
+      <section class="shell section" id="featured">
         <div class="wip reveal">
           <div class="wip-copy">
-            <span class="wip-status"><span class="pulse" aria-hidden="true"></span> Currently working on</span>
+            <span class="wip-status"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg> Featured project</span>
             <h2>Oculus-controlled robotic arm</h2>
             <p>
-              I <strong>model and build the whole arm myself</strong> — designed
+              I <strong>designed and built the whole arm myself</strong> — modelled
               in SolidWorks, every part printed from scratch, no kit involved.
               I drive it in real time from a VR headset: move your hand, the arm
               follows.
             </p>
             <ul class="wip-points">
               <li>A <strong>5-DOF arm built from scratch in SolidWorks</strong>, carrying joint loads on bearings rather than servo output shafts, with two shoulder servos mirrored across a single pivot to share torque</li>
-              <li>Three design iterations of tuning print orientation, press-fit tolerances and fastener access (<strong>DFM/DFA</strong>) cut part count and build time — it assembles from FDM parts and off-the-shelf hardware using hand tools</li>
+              <li>A <strong>linear parallel gripper</strong> whose jaws stay flat to each other, so the contact point sits in the same place no matter how far it opens</li>
+              <li>Three design iterations of tuning print orientation, press-fit tolerances and fastener access (<strong>DFM/DFA</strong>) — it assembles from FDM parts and off-the-shelf hardware using hand tools</li>
               <li>A <strong>WebXR app solves closed-form inverse kinematics at 50 Hz</strong>, a Node.js bridge maps joint angles to servo commands, and C++ ESP32 firmware enforces per-joint velocity and acceleration limits over serial/UDP</li>
-              <li>Next: designing a <strong>PCB</strong> to clean up the messy breadboard and jumper wires — servo power distribution, the ESP32 and signal routing all on one board</li>
             </ul>
             <div class="project-card-tags">
-              <span>In progress</span><span>SolidWorks</span><span>3D printing</span><span>ESP32</span><span>WebXR</span><span>C++</span><span>Node.js</span>
+              <span>SolidWorks</span><span>3D printing</span><span>ESP32</span><span>WebXR</span><span>C++</span><span>Node.js</span>
             </div>
+            <a class="btn wip-cta" href="project-arm.html">See more <span class="arrow">&#8594;</span></a>
           </div>
 
           <div class="wip-media">
@@ -422,6 +423,20 @@
               <span class="project-card-cta">View project <span class="arrow">→</span></span>
             </div>
           </a>
+
+          <a class="project-card" href="project-arm.html">
+            <div class="project-card-media">
+              <img src="assets/claw%20project/clawphoto1.jpeg" alt="The 3D-printed robotic arm on the workbench" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <span class="project-card-kicker">05 &mdash; Robotics</span>
+              <h3>Oculus-Controlled Robotic Arm</h3>
+              <p>A 5-DOF arm I designed, printed and wired myself, driven in real time from a VR headset.</p>
+              <div class="project-card-tags"><span>SolidWorks</span><span>3D printing</span><span>ESP32</span></div>
+              <span class="project-card-cta">View project <span class="arrow">&#8594;</span></span>
+            </div>
+          </a>
+
         </div>
       </section>
 

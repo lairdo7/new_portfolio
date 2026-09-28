@@ -466,7 +466,7 @@ body.dark-mode .theme-toggle .moon { display: none; }
 }
 
 /* ==========================================================================
-   Currently working on
+   Featured project
    ========================================================================== */
 
 .wip {
@@ -483,6 +483,18 @@ body.dark-mode .theme-toggle .moon { display: none; }
 }
 
 .wip-copy { display: grid; gap: 15px; align-content: start; }
+
+.wip-status .star {
+    width: 13px;
+    height: 13px;
+    flex: 0 0 13px;
+    fill: var(--accent-2);
+}
+
+.wip-cta {
+    width: fit-content;
+    margin-top: 4px;
+}
 
 .wip-status {
     display: inline-flex;
