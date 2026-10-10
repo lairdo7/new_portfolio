@@ -1532,6 +1532,23 @@ body.dark-mode .theme-toggle .moon { display: none; }
 
 .carousel-slide.active { display: block; }
 
+/* Mixed portrait/landscape sets (site photos + drawing sheets) lose too much
+   to a cover crop, so this variant shows the whole frame instead. */
+.carousel--fit .carousel-track {
+    aspect-ratio: 1 / 1;
+    max-height: 640px;
+    display: grid;
+    place-items: center;
+    background: var(--surface-2);
+}
+
+.carousel--fit .carousel-slide {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+}
+
 .carousel-controls {
     display: flex;
     align-items: center;
