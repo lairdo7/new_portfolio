@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Self-Balancing Robot | Laird Scabar</title>
-    <meta name="description" content="A two-wheel self-balancing robot running Arduino Uno, MPU6050 and TT motors on a 3D-printed chassis, built up from a flat-pack prototype." />
+    <meta name="description" content="A two-wheel self-balancing robot running Arduino Uno, MPU6050 and TT motors on a 3D-printed chassis, prototyped first in spare sheet metal, cardboard and tape." />
     <link rel="stylesheet" href="format1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,7 +50,8 @@
         <h1>Self-Balancing Robot</h1>
         <p class="section-lede">
           A two-wheel robot that holds itself upright. It reads its own tilt and
-          drives the wheels to catch the fall, hundreds of times a second.
+          drives the wheels to catch the fall, with the sensor code and the
+          balance loop written from scratch rather than pulled from a library.
         </p>
 
         <dl class="proj-meta">
@@ -66,7 +67,7 @@
           <div class="carousel carousel--fit" data-carousel>
             <div class="carousel-track">
               <img src="assets/salfbal1.png" alt="The finished self-balancing robot on its printed three-deck chassis" class="carousel-slide active" />
-              <img src="assets/selfbal2(prototype).png" alt="The earlier flat-pack prototype chassis with the same electronics" class="carousel-slide" loading="lazy" />
+              <img src="assets/selfbal2(prototype).png" alt="The first prototype, built from spare sheet metal and cardboard" class="carousel-slide" loading="lazy" />
               <img src="assets/selfbalcad.png" alt="CAD model of the three-deck printed chassis" class="carousel-slide" loading="lazy" />
             </div>
             <div class="carousel-controls">
@@ -86,7 +87,11 @@
                 <li>A two-wheel robot with its mass well above the axle, so standing still is an <strong>active job</strong> rather than a resting state. Left alone it falls over.</li>
                 <li>An <strong>MPU6050</strong> gyro and accelerometer measures how far it's tipping. An <strong>Arduino Uno</strong> turns that into a correction and drives two TT gear motors through an <strong>L298N</strong> driver.</li>
                 <li>The wheels have to drive <em>toward</em> the direction it's falling to get back under the centre of mass, which is the part that feels backwards until you watch it work.</li>
-                <li>The first version was a <strong>flat-pack prototype</strong> with decks cut from sheet and electronics bolted on, built to settle the layout before committing to anything.</li>
+                <li>I wrote the logic by hand and <strong>deliberately avoided the usual libraries</strong>. Dropping in someone's MPU6050 library gets you an angle in an afternoon, but you learn nothing about where that number came from.</li>
+                <li>So I talked to the sensor directly: <strong>wake it out of sleep mode, set its ranges, then read the measurement registers myself</strong> over I2C.</li>
+                <li>Each axis arrives as <strong>two bytes in two separate registers</strong>. You read the high byte and the low byte, <strong>shift the high byte up eight bits and OR the low one in</strong> to rebuild the signed 16-bit reading, then divide by the scale factor for the range you picked to get real units.</li>
+                <li>Doing it the long way is what made the sensor stop being a black box. The balance loop on top of it is mine too, so when it wobbled I knew which part to go fix.</li>
+                <li>The first version was a <strong>prototype I made in my dorm room out of spare sheet metal, cardboard and tape</strong>, just to validate the shape and the layout before committing to anything.</li>
                 <li>The second is a <strong>three-deck chassis I modelled in CAD and 3D printed</strong>, stacking the motors and battery low and the controller above them.</li>
                 <li>Stacking matters more than it looks. Where the battery sits changes the centre of mass, and the centre of mass is what the whole balancing problem is about.</li>
               </ul>
@@ -100,12 +105,13 @@
         <aside class="proj-aside reveal">
           <h2>Project details</h2>
           <div class="proj-aside-row"><dt>Role</dt><dd>Design, build and code</dd></div>
+          <div class="proj-aside-row"><dt>Firmware</dt><dd>Written from scratch, no sensor library</dd></div>
           <div class="proj-aside-row"><dt>Controller</dt><dd>Arduino Uno</dd></div>
           <div class="proj-aside-row"><dt>Drive</dt><dd>2 × TT gear motors, L298N</dd></div>
           <div class="proj-aside-row"><dt>Sensor</dt><dd>GY-521 / MPU6050</dd></div>
           <div class="proj-aside-row">
             <dt>Tools</dt>
-            <dd class="tag-row"><span>CAD</span><span>3D printing</span><span>Arduino</span><span>C++</span><span>Controls</span></dd>
+            <dd class="tag-row"><span>CAD</span><span>3D printing</span><span>Arduino</span><span>C++</span><span>I2C</span><span>Controls</span></dd>
           </div>
         </aside>
       </div>
