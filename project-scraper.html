@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Internship Scraper — Laird Scabar</title>
+    <title>Python Internship Scraper | Laird Scabar</title>
     <meta name="description" content="A Python tool that aggregates engineering internship postings from the Greenhouse and Lever APIs into one filterable Streamlit dashboard." />
     <link rel="stylesheet" href="format1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +46,7 @@
     <main class="shell">
       <section class="proj-hero reveal">
         <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> All projects</a>
-        <span class="eyebrow">Project 04 — Automation</span>
+        <span class="eyebrow">Project 07 · Automation</span>
         <h1>Python Internship Scraper</h1>
         <p class="section-lede">
           Checking a hundred job boards by hand is a bad use of a weekend, so I
@@ -91,7 +91,7 @@
               <p class="section-kicker">Quick explanation</p>
               <h2>What it does</h2>
               <ul class="simple-bullets">
-                <li>Most companies post internships through the same two systems — Greenhouse and Lever — but each company runs its own board.</li>
+                <li>Most companies post internships through the same two systems, Greenhouse and Lever, but each company runs its own board.</li>
                 <li>Finding roles by hand means checking dozens of sites one at a time.</li>
                 <li>This pulls all of them through their APIs, filters to mechanical, mechatronics and software roles, and removes duplicates.</li>
                 <li>Everything lands in one Streamlit dashboard I can sort, filter, and export.</li>
@@ -124,7 +124,7 @@
                       breaks the moment someone changes a CSS class.
                     </p>
                     <ul class="dd-bullets">
-                      <li>This was the decision that mattered most — it made the tool dramatically more stable.</li>
+                      <li>This was the decision that mattered most. It made the tool dramatically more stable.</li>
                       <li>It also meant never dealing with rate limiting, bot detection, or brittle selectors.</li>
                       <li>The tool walks a list of company board tokens and hits each endpoint in turn.</li>
                     </ul>
@@ -139,10 +139,10 @@
                     <p class="section-kicker">Part 2: the pipeline</p>
                     <h3><span class="step-index">2.</span> Fetch, normalise, filter, dedupe</h3>
                     <ul class="dd-bullets">
-                      <li><strong>Fetch</strong> — request each company's endpoint with <code>requests</code>, handling failures per company so one bad response can't kill the whole run.</li>
-                      <li><strong>Normalise</strong> — the two providers return different shapes, so both map into a common schema: title, company, location, department, posting date, URL.</li>
-                      <li><strong>Filter</strong> — keyword matching on titles and departments to keep mechanical, mechatronics and software roles, and drop senior and full-time postings.</li>
-                      <li><strong>Deduplicate</strong> — the same role often appears under multiple departments, so rows dedupe on company plus normalised title.</li>
+                      <li><strong>Fetch</strong>: request each company's endpoint with <code>requests</code>, handling failures per company so one bad response can't kill the whole run.</li>
+                      <li><strong>Normalise</strong>: the two providers return different shapes, so both map into a common schema: title, company, location, department, posting date, URL.</li>
+                      <li><strong>Filter</strong>: keyword matching on titles and departments to keep mechanical, mechatronics and software roles, and drop senior and full-time postings.</li>
+                      <li><strong>Deduplicate</strong>: the same role often appears under multiple departments, so rows dedupe on company plus normalised title.</li>
                     </ul>
                   </div>
                   <div class="dd-media">
@@ -176,7 +176,7 @@
                     <p class="section-kicker">Part 4: what I took away</p>
                     <h3><span class="step-index">4.</span> Real data is messy</h3>
                     <p>
-                      The interesting part wasn't the code — it was how
+                      The interesting part wasn't the code. It was how
                       inconsistent third-party data actually is once you stop
                       looking at tutorial examples.
                     </p>

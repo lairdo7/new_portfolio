@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SUBC Submarine Drivetrain — Laird Scabar</title>
+    <title>SUBC Submarine Drivetrain | Laird Scabar</title>
     <meta name="description" content="Designing, optimizing and manufacturing the human-powered drivetrain for UBC's competition submarine." />
     <link rel="stylesheet" href="format1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,16 +46,16 @@
     <main class="shell">
       <section class="proj-hero reveal">
         <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> All projects</a>
-        <span class="eyebrow">Project 01 — Mechanical design</span>
+        <span class="eyebrow">Project 02 · Mechanical design</span>
         <h1>SUBC Submarine Drivetrain</h1>
         <p class="section-lede">
-          The human-powered drivetrain for UBC's competition submarine — with 37% lighter
+          The human-powered drivetrain for UBC's competition submarine, with 37% lighter
           side plates and no more slippage on the driving pinion.
         </p>
 
         <dl class="proj-meta">
-          <div><dt>Team</dt><dd>SUBC — UBC Submarine Design Team</dd></div>
-          <div><dt>Timeline</dt><dd>2025 — 2026</dd></div>
+          <div><dt>Team</dt><dd>SUBC, UBC Submarine Design Team</dd></div>
+          <div><dt>Timeline</dt><dd>2025 - 2026</dd></div>
           <div><dt>My role</dt><dd>Drivetrain Engineer</dd></div>
           <div><dt>Outcome</dt><dd>37% lighter side plates</dd></div>
         </dl>
@@ -66,12 +66,12 @@
           <div class="carousel" data-carousel>
             <div class="carousel-track">
               <!--
-                3D CAD slide — to use your own part:
+                3D CAD slide, to use your own part:
                 1. In SolidWorks: File > Save As > STL (binary, fine resolution)
                 2. Drop the file into assets/models/
                 3. Point data-model below at it (see assets/models/README.md)
               -->
-              <div class="carousel-slide cad-slide active" aria-label="Interactive 3D model — drag to rotate">
+              <div class="carousel-slide cad-slide active" aria-label="Interactive 3D model, drag to rotate">
                 <div class="cad-viewer" data-model="assets/models/gear-box-subc%20-%20Bottom%20Plate_Assembly%20v7-1.STL,assets/models/gear-box-subc%20-%20Side%20Plate-1.STL,assets/models/gear-box-subc%20-%20Side%20Plate-2.STL,assets/models/gear-box-subc%20-%20Back%20Plate-1.STL,assets/models/gear-box-subc%20-%20Crank-1.STL,assets/models/gear-box-subc%20-%20Crank-2.STL,assets/models/gear-box-subc%20-%20spindle-1.STL,assets/models/gear-box-subc%20-%202515N11_Metal%20Bevel%20Gear-1.STL,assets/models/gear-box-subc%20-%202515N12_Metal%20Bevel%20Pinion-1.STL,assets/models/gear-box-subc%20-%202515N19_Metal%20Bevel%20Gear-1.STL,assets/models/gear-box-subc%20-%202515N21_Metal%20Bevel%20Pinion-1.STL,assets/models/gear-box-subc%20-%20Output%20Inner%20Shaft-1.STL,assets/models/gear-box-subc%20-%20Output%20Outer%20Shaft-1.STL,assets/models/gear-box-subc%20-%20Bushing%20for%20output-1.STL,assets/models/gear-box-subc%20-%20brass%20bushing%20near%20propeller-1.STL" data-cad-color="#96a9c4"></div>
                 <span class="cad-slide-label">interactive gearbox assembly</span>
               </div>
@@ -107,7 +107,7 @@
               <p class="section-kicker">Quick explanation</p>
               <h2>What it is</h2>
               <ul class="simple-bullets">
-                <li>SUBC builds human-powered submarines to race internationally — a diver inside pedals the sub through a course.</li>
+                <li>SUBC builds human-powered submarines to race internationally. A diver inside pedals the sub through a course.</li>
                 <li>I work on the drivetrain: a 2:1 straight-bevel gearbox that turns pedalling into propeller rotation, designed for a 1.8–2.1 kN load.</li>
                 <li>FEA-guided material removal cut the side plates from 1.89 lb to 1.19 lb (37%), and a modified step-down collar stopped the driving pinion from slipping.</li>
                 <li>Modelled in SolidWorks, validated with FEA, and CNC machined in-house.</li>
@@ -135,7 +135,7 @@
                     <h3><span class="step-index">1.</span> Two things were wrong with the old gearbox</h3>
                     <ul class="dd-bullets">
                       <li>It was <strong>heavier than it needed to be</strong>. The whole vehicle is buoyancy-balanced, so every gram of structure is a gram that has to be offset somewhere else.</li>
-                      <li>The <strong>driving pinion slipped on its shaft and drifted out of alignment</strong> — losing power at exactly the moment the pilot was pushing hardest.</li>
+                      <li>The <strong>driving pinion slipped on its shaft and drifted out of alignment</strong>, losing power at exactly the moment the pilot was pushing hardest.</li>
                       <li>Both problems lived in the same two components: the side plates that carry the bearing bores, and the collar that locates the driving pinion.</li>
                     </ul>
                   </div>
@@ -149,7 +149,7 @@
                     <p class="section-kicker">Part 2: concept &amp; CAD</p>
                     <h3><span class="step-index">2.</span> Generating and narrowing the side plate concepts</h3>
                     <ul class="dd-bullets">
-                      <li>Generated several side plate concepts and scored them against weight, stiffness, and — critically — whether a machinist could actually fixture and cut them.</li>
+                      <li>Generated several side plate concepts and scored them against weight, stiffness, and, critically, whether a machinist could actually fixture and cut them.</li>
                       <li>Modelled the shortlist in SolidWorks, iterating the geometry around the bearing bores and mounting interfaces where the loads concentrate.</li>
                       <li>Kept the bearing seats as the fixed reference and let everything else move, so alignment stayed correct through every revision.</li>
                     </ul>
@@ -168,7 +168,7 @@
                     <h3><span class="step-index">3.</span> Letting the analysis remove the material</h3>
                     <ul class="dd-bullets">
                       <li>Ran FEA on each iteration against the 1.8–2.1 kN design load and removed material from the low-stress regions the analysis highlighted.</li>
-                      <li>Held the <strong>required safety factors</strong> as the hard constraint, and got the side plates from <strong>1.89 lb down to 1.19 lb — 37% lighter</strong>.</li>
+                      <li>Held the <strong>required safety factors</strong> as the hard constraint, and got the side plates from <strong>1.89 lb down to 1.19 lb, 37% lighter</strong>.</li>
                       <li>Several concepts I liked visually didn't hold the safety factor and had to be thrown out. This was the first project where FEA changed my design rather than just confirming it.</li>
                     </ul>
                   </div>
@@ -208,7 +208,7 @@
                       <li><strong>Pinion slippage eliminated</strong> and alignment restored with the step-down collar.</li>
                     </ul>
                     <p>
-                      The biggest lesson wasn't the analysis — it was how much
+                      The biggest lesson wasn't the analysis. It was how much
                       manufacturing constrains design. Designing around what we
                       could machine in-house changed my geometry more than any simulation did,
                       because a part you can't fixture is a part you can't make.
@@ -227,7 +227,7 @@
           <h2>Project details</h2>
           <div class="proj-aside-row"><dt>Role</dt><dd>Drivetrain Engineer</dd></div>
           <div class="proj-aside-row"><dt>Team</dt><dd>SUBC, UBC</dd></div>
-          <div class="proj-aside-row"><dt>Timeline</dt><dd>2025 — 2026</dd></div>
+          <div class="proj-aside-row"><dt>Timeline</dt><dd>2025 - 2026</dd></div>
           <div class="proj-aside-row">
             <dt>Tools</dt>
             <dd class="tag-row"><span>SolidWorks</span><span>FEA</span><span>CNC</span><span>GD&amp;T</span><span>3D printing</span></dd>

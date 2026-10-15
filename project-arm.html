@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oculus-Controlled Robotic Arm — Laird Scabar</title>
+    <title>Oculus-Controlled Robotic Arm | Laird Scabar</title>
     <meta name="description" content="A 5-DOF robotic arm designed in SolidWorks, 3D printed from scratch and driven in real time from a VR headset over WebXR and an ESP32." />
     <link rel="stylesheet" href="format1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +46,7 @@
     <main class="shell">
       <section class="proj-hero reveal">
         <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> All projects</a>
-        <span class="eyebrow">Project 05 — Robotics</span>
+        <span class="eyebrow">Project 03 · Robotics</span>
         <h1>Oculus-Controlled Robotic Arm</h1>
         <p class="section-lede">
           A 5-DOF arm I designed, printed and wired myself. I open a model of it
@@ -96,7 +96,7 @@
               <p class="section-kicker">Quick explanation</p>
               <h2>What it is</h2>
               <ul class="simple-bullets">
-                <li>A <strong>5-DOF robotic arm</strong> I took from a first sketch on paper through to a working machine — every part designed in SolidWorks and printed on my Bambu A1.</li>
+                <li>A <strong>5-DOF robotic arm</strong> I took from a first sketch on paper through to a working machine. Every part was designed in SolidWorks and printed on my Bambu A1.</li>
                 <li>An app in my headset puts a 3D model of the arm in the room in front of me. I drag the end of that model around and the real arm follows it.</li>
                 <li>There's a toggle between a free mode and one that keeps the gripper parallel to the ground.</li>
                 <li>The joints carry their loads on <strong>bearings rather than servo output shafts</strong>, and the shoulder uses two mirrored servos so they share the torque at the heaviest joint.</li>
@@ -124,7 +124,7 @@
                     <p class="section-kicker">Part 1: why I built it</p>
                     <h3><span class="step-index">1.</span> A project I owned end to end</h3>
                     <ul class="dd-bullets">
-                      <li>I wanted a robotics project that was <strong>mine from start to finish</strong> — first sketch on paper through to a physical product sitting on the desk.</li>
+                      <li>I wanted a robotics project that was <strong>mine from start to finish</strong>, from the first sketch on paper through to a physical product sitting on the desk.</li>
                       <li>I had a new 3D printer and wanted to learn it properly, rather than only printing other people's files.</li>
                       <li>I also wanted to find out whether what I knew in CAD would hold up on parts I actually had to manufacture myself.</li>
                     </ul>
@@ -214,7 +214,7 @@
                     <h3><span class="step-index">6.</span> From headset to servo</h3>
                     <ul class="dd-bullets">
                       <li>The VR app solves the <strong>inverse kinematics</strong> and sends joint angles at <strong>50 Hz</strong>, the same rate the servos take their PWM signal at.</li>
-                      <li>A <strong>Node.js bridge</strong> on the computer maps those joint angles into servo commands — the headset's browser can't talk to the hardware directly.</li>
+                      <li>A <strong>Node.js bridge</strong> on the computer maps those joint angles into servo commands, because the headset's browser can't talk to the hardware directly.</li>
                       <li><strong>C++ firmware on an ESP32</strong> handles the servo communication and enforces velocity and acceleration limits so nothing snaps to a new position.</li>
                       <li>It runs over <strong>serial when the board is plugged into the computer, or UDP over Wi-Fi</strong> when it isn't.</li>
                     </ul>

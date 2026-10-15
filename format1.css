@@ -1381,6 +1381,8 @@ body.dark-mode .theme-toggle .moon { display: none; }
     display: block;
 }
 
+.simple-visual--fit img { object-fit: contain; }
+
 /* deep dive — hidden until the switch is flipped */
 .deep-dive {
     max-height: 0;
