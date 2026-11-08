@@ -423,6 +423,50 @@
    * Copy email
    * ------------------------------------------------------------------ */
 
+  /* ----------------------------------------------------------------------
+   * Visit counter — real count from the worker, plus a fixed baseline for
+   * the views that happened before the counter existed. Stays hidden if the
+   * endpoint is missing or unreachable: better no number than a fake one.
+   * -------------------------------------------------------------------- */
+  function initVisitCounter() {
+    const el = document.getElementById("visit-counter");
+    if (!el) return;
+
+    const endpoint = (el.dataset.endpoint || "").trim();
+    if (!endpoint) return;
+
+    const baseline = parseInt(el.dataset.baseline || "0", 10) || 0;
+    // Count a person once per browsing session, not once per page view.
+    const counted = sessionStorage.getItem("ls-counted") === "1";
+    const url = counted ? endpoint : endpoint + (endpoint.includes("?") ? "&" : "?") + "hit=1";
+
+    fetch(url, { method: "GET", cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((data) => {
+        const total = Number(data && data.count);
+        if (!Number.isFinite(total)) return;
+        try { sessionStorage.setItem("ls-counted", "1"); } catch (e) {}
+        el.hidden = false;
+        countUp(el.querySelector(".visit-number"), total + baseline);
+      })
+      .catch(() => {});
+  }
+
+  function countUp(node, target) {
+    if (!node) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || target < 2) { node.textContent = target.toLocaleString(); return; }
+    const start = performance.now();
+    const dur = 900;
+    function tick(now) {
+      const t = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      node.textContent = Math.round(target * eased).toLocaleString();
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   function initCopyEmail() {
     const button = document.getElementById("copy-email");
     const state = document.getElementById("copy-state");
@@ -484,6 +528,7 @@
     initLightbox();
     initCopyEmail();
     initImageFallbacks();
+    initVisitCounter();
   }
 
   if (document.readyState === "loading") {

@@ -206,15 +206,33 @@
 
     <footer class="site-footer">
       <div class="shell footer-inner">
-        <span>© 2026 Laird Scabar</span>
+        <div class="footer-brand">
+          <span class="footer-name">Laird Scabar</span>
+          <span class="footer-meta">&copy; 2026 &middot; Vancouver, BC</span>
+        </div>
+
         <nav class="footer-links">
-          <a href="index.html">Home</a>
+          <a href="about.html">About me</a>
+          <a href="assets/Laird-Scabar-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <a href="https://github.com/lairdo7" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/lairdscabar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="mailto:lairdscabar@gmail.com">Email</a>
         </nav>
+
+        <!-- Counter stays hidden until the endpoint answers, so it never shows a
+             made-up number. data-baseline is added to the live count. -->
+        <p class="visit-counter" id="visit-counter"
+           data-endpoint=""
+           data-baseline="112" hidden>
+          <span class="visit-dot" aria-hidden="true"></span>
+          <span class="visit-number">0</span> visits
+        </p>
       </div>
     </footer>
 
     <script src="script.js"></script>
+    <!-- Cloudflare Web Analytics -->
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0a46e1d4943642d09e1269eb62a7f9d8"}'></script>
+    <!-- End Cloudflare Web Analytics -->
   </body>
 </html>
