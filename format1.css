@@ -2106,3 +2106,28 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
     html.js .reveal { opacity: 1; transform: none; }
 }
+
+/* ==========================================================================
+   Theme toggle: radial wipe
+   The toggle runs a View Transition, and script.js animates a clip-path
+   circle growing out of the button. These rules kill the default cross-fade
+   so the circle is the only thing you see, and stack the new snapshot above
+   the old one so the incoming theme is what gets revealed.
+   ========================================================================== */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(root),
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none !important;
+    }
+}

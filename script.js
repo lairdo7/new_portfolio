@@ -24,9 +24,49 @@
     const toggle = document.getElementById("theme-toggle");
     if (!toggle) return;
 
-    toggle.addEventListener("click", () => {
+    const applyTheme = () => {
       const isDark = document.body.classList.toggle("dark-mode");
       localStorage.setItem("theme", isDark ? "dark" : "light");
+    };
+
+    toggle.addEventListener("click", () => {
+      // No View Transitions support, or the visitor asked for less motion:
+      // just flip it.
+      if (!document.startViewTransition || prefersReducedMotion) {
+        applyTheme();
+        return;
+      }
+
+      // The new theme wipes in as a circle growing out of the button itself.
+      const rect = toggle.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+
+      // Reach the furthest corner of the viewport so nothing is left behind.
+      const radius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+
+      const transition = document.startViewTransition(applyTheme);
+
+      transition.ready
+        .then(() => {
+          document.documentElement.animate(
+            {
+              clipPath: [
+                `circle(0px at ${x}px ${y}px)`,
+                `circle(${radius}px at ${x}px ${y}px)`,
+              ],
+            },
+            {
+              duration: 520,
+              easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+              pseudoElement: "::view-transition-new(root)",
+            }
+          );
+        })
+        .catch(() => {});
     });
   }
 
