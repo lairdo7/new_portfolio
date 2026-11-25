@@ -22,6 +22,7 @@
     --radius-md: 10px;
     --radius-sm: 8px;
     --radius-pill: 999px;
+    --radius-btn: 8px;
 
     --shadow-sm: none;
     --shadow: none;
@@ -187,7 +188,7 @@ h1, h2, h3, h4 {
     height: 36px;
     display: grid;
     place-items: center;
-    border-radius: var(--radius-pill);
+    border-radius: 10px;
     border: 1px solid var(--line);
     background: var(--surface);
     color: var(--muted);
@@ -217,7 +218,7 @@ body.dark-mode .theme-toggle .moon { display: none; }
     align-items: center;
     gap: 8px;
     padding: 11px 22px;
-    border-radius: var(--radius-pill);
+    border-radius: var(--radius-btn);
     border: 1px solid transparent;
     background: var(--text);
     color: var(--bg);
@@ -460,14 +461,10 @@ body.dark-mode .theme-toggle .moon { display: none; }
     align-items: center;
     gap: 9px;
     width: fit-content;
-    padding: 6px 15px 6px 12px;
-    border-radius: var(--radius-pill);
-    border: 1px solid var(--line);
-    background: var(--surface);
-    color: var(--muted);
-    font-size: 12px;
+    color: var(--faint);
+    font-size: 11.5px;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
 }
 
@@ -570,7 +567,7 @@ body.dark-mode .theme-toggle .moon { display: none; }
     width: 44px;
     height: 44px;
     border: 1px solid var(--line);
-    border-radius: var(--radius-pill);
+    border-radius: 10px;
     background: var(--surface);
     color: var(--text);
     display: grid;
@@ -758,7 +755,7 @@ body.dark-mode .theme-toggle .moon { display: none; }
     gap: 6px;
     margin-top: 10px;
     padding: 7px 15px;
-    border-radius: var(--radius-pill);
+    border-radius: var(--radius-btn);
     border: 1px solid var(--line-strong);
     background: var(--surface);
     color: var(--text);
@@ -1003,14 +1000,13 @@ body.dark-mode .theme-toggle .moon { display: none; }
 }
 
 .timeline-tag {
-    padding: 5px 13px;
-    border-radius: var(--radius-pill);
-    border: 1px solid var(--line);
-    background: var(--surface);
-    color: var(--muted);
-    font-size: 12.5px;
-    font-weight: 600;
+    padding-top: 4px;
     white-space: nowrap;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--faint);
 }
 
 /* ==========================================================================
@@ -1089,16 +1085,15 @@ body.dark-mode .theme-toggle .moon { display: none; }
 .project-card-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 4px 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
 }
 
 .project-card-tags span {
-    padding: 4px 11px;
-    border-radius: var(--radius-pill);
-    background: var(--surface-2);
-    color: var(--muted);
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--faint);
 }
 
 .project-card-cta {
@@ -1213,16 +1208,13 @@ body.dark-mode .theme-toggle .moon { display: none; }
 .proj-aside .tag-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 6px 14px;
 }
 
 .proj-aside .tag-row span {
-    padding: 4px 11px;
-    border-radius: var(--radius-pill);
-    background: var(--surface-2);
+    font-size: 13.5px;
+    font-weight: 500;
     color: var(--muted);
-    font-size: 12px;
-    font-weight: 600;
 }
 
 /* ==========================================================================
@@ -1600,7 +1592,7 @@ body.dark-mode .theme-toggle .moon { display: none; }
 .cad-hint {
     position: absolute;
     padding: 6px 13px;
-    border-radius: var(--radius-pill);
+    border-radius: 6px;
     background: var(--surface);
     border: 1px solid var(--line);
     color: var(--muted);
@@ -1675,7 +1667,7 @@ body.dark-mode .theme-toggle .moon { display: none; }
 
 .chapter-nav a {
     padding: 8px 16px;
-    border-radius: var(--radius-pill);
+    border-radius: var(--radius-btn);
     border: 1px solid var(--line);
     background: var(--surface);
     color: var(--muted);
@@ -1954,9 +1946,6 @@ body.dark-mode .theme-toggle .moon { display: none; }
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 12px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-pill);
     color: var(--muted);
     font-size: 13px;
     font-variant-numeric: tabular-nums;

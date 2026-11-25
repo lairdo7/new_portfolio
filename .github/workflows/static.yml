@@ -22,11 +22,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Build and deploy are two separate jobs on purpose. Deploying from the same
+  # job that uploads can race: the artifact finishes uploading but GitHub's
+  # artifact API has not indexed it yet, and deploy-pages reports
+  # "Found 0 artifact(s)". The job boundary gives it time to settle.
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,6 +38,14 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
