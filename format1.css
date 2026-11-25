@@ -954,55 +954,44 @@ body.dark-mode .theme-toggle .moon { display: none; }
     line-height: 1.65;
 }
 
-/* Other experience — a quiet disclosure under the timeline. Collapsed it is
-   a small ghost pill, so it reads as a deliberate control rather than a
-   stray line of text. */
+/* Other experience — a quiet disclosure under the timeline. Deliberately
+   borderless so it reads as a small label rather than another row. */
 
-.other-exp { margin-top: 22px; }
+.other-exp { margin-top: 2px; }
 
 .other-exp-summary {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    padding: 9px 17px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-pill);
-    background: var(--surface);
-    color: var(--muted);
+    gap: 7px;
+    padding: 18px 0 2px;
+    color: var(--faint);
     font-size: 13.5px;
     font-weight: 600;
     letter-spacing: -0.01em;
     cursor: pointer;
     list-style: none;
     user-select: none;
-    transition: color 0.16s ease, border-color 0.16s ease, background-color 0.16s ease;
+    transition: color 0.16s ease;
 }
 
 .other-exp-summary::-webkit-details-marker { display: none; }
-
-.other-exp-summary:hover {
-    color: var(--text);
-    border-color: var(--line-strong);
-    background: var(--surface-2);
-}
+.other-exp-summary:hover { color: var(--text); }
 
 .other-exp-summary:focus-visible {
     outline: 2px solid var(--accent);
-    outline-offset: 3px;
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
 }
 
 .other-exp-chev {
-    width: 14px;
-    height: 14px;
-    margin-right: -2px;
-    color: var(--faint);
-    transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), color 0.16s ease;
+    width: 15px;
+    height: 15px;
+    transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.other-exp-summary:hover .other-exp-chev { color: var(--muted); }
 .other-exp[open] .other-exp-chev { transform: rotate(180deg); }
 
-.other-exp-list { margin-top: 22px; }
+.other-exp-list { margin-top: 16px; }
 
 .other-exp[open] .other-exp-list {
     animation: otherExpIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
